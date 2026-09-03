@@ -1,0 +1,32 @@
+basin_id: thame
+name: Thame corridor, Solukhumbu
+province: Koshi
+districts: [Solukhumbu]
+bbox: [86.55, 27.75, 86.75, 27.95]
+source_catchment:
+  bbox: [86.60, 27.85, 86.75, 27.95]
+  country: NP
+watched_features:
+  - id: thame_upper_lake
+    type: moraine_dammed_lake
+    pdgl: false
+    location: [86.673, 27.897]
+  - id: thame_lower_lake
+    type: moraine_dammed_lake
+    pdgl: false
+    first_seen: 2024-08-16
+    location: [86.669, 27.893]
+downstream_reach:
+  - {name: Thame, location: [86.664, 27.876], district: Solukhumbu}
+  - {name: Thameteng, location: [86.700, 27.850], district: Solukhumbu}
+  - {name: Namche Bazaar, location: [86.714, 27.805], district: Solukhumbu}
+dem: hma_dem8m_mos_tiles_thame
+dem_vintage: 2017-07-16
+watched_products:
+  - OPERA_L3_DIST-ALERT-HLS_V1
+  - sentinel-1-grd
+gauges: []
+authority:
+  level: district
+  body: DDMC Solukhumbu
+mode: live
