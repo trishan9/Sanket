@@ -1,0 +1,27 @@
+id: opera_l3_dist_alert_hls_v1
+source_org: NASA / JPL OPERA
+access:
+  kind: earthaccess
+  dataset: opera_l3_dist_alert_hls_v1
+  refresh: every 2-4 days
+  checksum: sha256
+license: public domain (NASA)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: 30 m
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: medium
+good_for:
+- flagging land-surface disturbance as a live trigger
+cannot_tell_you:
+- anything under cloud, which is most of the monsoon
+- the cause of a disturbance, only that reflectance changed
+independence_group: opera_optical_disturbance

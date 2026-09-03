@@ -1,0 +1,29 @@
+id: opera_l3_dswx_s1_v1
+source_org: NASA / JPL OPERA
+access:
+  kind: earthaccess
+  dataset: opera_l3_dswx_s1_v1
+  refresh: every few days
+  checksum: sha256
+license: public domain (NASA)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: 30 m
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: high
+good_for:
+- detecting new or growing open water through cloud
+- baseline water-extent history
+cannot_tell_you:
+- water under dense canopy or in radar layover and shadow
+- water bodies below roughly 3000 square metres
+- depth, volume or discharge - it is an extent product
+independence_group: opera_radar_water
