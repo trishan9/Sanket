@@ -1,0 +1,30 @@
+id: icimod_glacial_lakes
+source_org: ICIMOD / UNDP
+access:
+  kind: manual
+  dataset: icimod_glacial_lakes
+  refresh: static
+  checksum: sha256
+license: ICIMOD RDS data download agreement, research use
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: vector
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: high
+good_for:
+- the official PDGL priority list
+- national-scale lake inventory for Scout's weekly sweep
+cannot_tell_you:
+- lakes that formed after the 2015 inventory epoch
+- lakes below the imagery detection floor of roughly 0.003 square kilometres
+- whether a listed lake is currently impounding water - it is a static inventory
+- 'the 2026 Lhende source: 25 lakes sit in that catchment and none is PDGL-listed'
+independence_group: icimod_inventory

@@ -1,0 +1,29 @@
+id: worldpop
+source_org: WorldPop, University of Southampton
+access:
+  kind: http
+  dataset: worldpop
+  refresh: annual
+  checksum: sha256
+license: CC-BY-4.0
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: 100 m
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: model_output
+confidence_tier: low
+good_for:
+- order-of-magnitude population counts per settlement or grid cell
+cannot_tell_you:
+- who was actually present - it models usual residence
+- displacement after 26 August 2026
+- anything at building resolution; counts are order-of-magnitude
+- population change since 2020
+independence_group: worldpop_population
