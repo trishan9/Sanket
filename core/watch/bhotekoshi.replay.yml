@@ -1,0 +1,42 @@
+basin_id: bhotekoshi_trishuli_replay
+name: Lhende - Bhotekoshi - Trishuli corridor (REPLAY)
+province: Bagmati
+districts: [Rasuwa, Nuwakot, Dhading]
+bbox: [85.10, 27.80, 85.45, 28.55]
+source_catchment:
+  bbox: [85.30, 28.20, 85.45, 28.40]
+  country: CN
+watched_features:
+  - id: purepu_glacier
+    type: supraglacial_lake
+    pdgl: false
+    location: [85.36, 28.35]
+  - id: lhende_barrier
+    type: barrier_lake
+    pdgl: false
+    first_seen: 2026-08-27
+    location: [85.377, 28.271]
+downstream_reach:
+  - {name: Timure, location: [85.3775, 28.2712], district: Rasuwa}
+  - {name: Syapru Besi, location: [85.3372, 28.1611], district: Rasuwa}
+  - {name: Dhunche, location: [85.2969, 28.1122], district: Rasuwa}
+  - {name: Betrawati, location: [85.1836, 27.9683], district: Nuwakot}
+  - {name: Trishuli Bazaar, location: [85.1836, 27.9314], district: Nuwakot}
+dem: hma_dem8m_mos_tiles_642_675
+dem_vintage: 2017-07-16
+watched_products:
+  - OPERA_L3_DIST-ALERT-HLS_V1
+  - OPERA_L3_DSWX-S1_V1
+  - sentinel-1-grd
+gauges: [betrawati]
+authority:
+  level: district
+  body: DDMC Rasuwa
+mode: replay
+replay:
+  label: "REPLAY - Bhotekoshi barrier lake, 27-28 August 2026"
+  source: data/replay/bhotekoshi_2026_08/
+  clock_start: "2026-08-27T06:00:00+00:00"
+  clock_end: "2026-08-28T18:00:00+00:00"
+  speed: 3600
+  as_of_follows_clock: true
