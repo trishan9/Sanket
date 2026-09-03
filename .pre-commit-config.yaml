@@ -1,0 +1,32 @@
+repos:
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.15.1
+    hooks:
+      - id: ruff
+        args: [--fix]
+        files: ^(core|analysis|agent|watch|actions|api|sanket_mcp|tests)/
+      - id: ruff-format
+        files: ^(core|analysis|agent|watch|actions|api|sanket_mcp|tests)/
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-added-large-files
+        args: [--maxkb=2048]
+      - id: detect-private-key
+      - id: end-of-file-fixer
+        exclude: ^(data|dist|board/node_modules)/
+      - id: trailing-whitespace
+        exclude: ^(data|dist|board/node_modules)/
+  - repo: local
+    hooks:
+      - id: engineering-standards
+        name: no comments, type hints, size limits
+        entry: python -m pytest tests/test_engineering_standards.py -q
+        language: system
+        pass_filenames: false
+      - id: provider-isolation
+        name: only router names a provider
+        entry: python -m pytest tests/test_provider_isolation.py -q
+        language: system
+        pass_filenames: false
