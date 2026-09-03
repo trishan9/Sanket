@@ -1,0 +1,28 @@
+id: sentinel_2_l2a
+source_org: Microsoft Planetary Computer / ESA Copernicus
+access:
+  kind: stac
+  dataset: sentinel_2_l2a
+  refresh: 5 days (cloud-permitting)
+  checksum: sha256
+license: CC-BY-4.0 (Copernicus)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: 10-20 m
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: medium
+good_for:
+- lake area time series in clear-sky windows
+- visual before/after imagery
+cannot_tell_you:
+- anything under cloud - this collection is 96 percent unusable in the monsoon window
+- water bodies below roughly 0.003 square kilometres
+independence_group: sanket_optical

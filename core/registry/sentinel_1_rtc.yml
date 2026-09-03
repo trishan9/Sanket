@@ -1,0 +1,29 @@
+id: sentinel_1_rtc
+source_org: Microsoft Planetary Computer / ESA Copernicus
+access:
+  kind: stac
+  dataset: sentinel_1_rtc
+  refresh: 6-12 days
+  checksum: sha256
+license: CC-BY-4.0 (Copernicus)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: 10 m
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: high
+good_for:
+- radar water detection when OPERA radar products are unavailable
+- before/after comparison at matched geometry
+cannot_tell_you:
+- the valley floor where radar layover and shadow obliterate it in steep terrain
+- water depth - backscatter gives extent, not volume
+- open water smaller than a few 10 m pixels
+independence_group: sanket_radar
