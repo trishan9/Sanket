@@ -1,0 +1,35 @@
+- role: dhm_hydrologist
+  name: "DHM Divisional Hydrologist, Bagmati"
+  channel: whatsapp
+  contact: "whatsapp:+9779800000001"
+  settlement: null
+- role: local_administration
+  name: "Rasuwa District Administration Office"
+  channel: whatsapp
+  contact: "whatsapp:+9779800000002"
+  settlement: null
+- role: hydropower_operator
+  name: "Trishuli 3B Hydropower Duty Room"
+  channel: whatsapp
+  contact: "whatsapp:+9779800000003"
+  settlement: "Trishuli Bazaar"
+- role: police_post
+  name: "Area Police Post, Syapru Besi"
+  channel: whatsapp
+  contact: "whatsapp:+9779800000004"
+  settlement: "Syapru Besi"
+- role: health_post
+  name: "Timure Health Post"
+  channel: whatsapp
+  contact: "whatsapp:+9779800000005"
+  settlement: "Timure"
+- role: school
+  name: "Dhunche Secondary School"
+  channel: whatsapp
+  contact: "whatsapp:+9779800000006"
+  settlement: "Dhunche"
+- role: community_focal_point
+  name: "Betrawati Ward Focal Point"
+  channel: whatsapp
+  contact: "whatsapp:+9779800000007"
+  settlement: "Betrawati"
