@@ -1,0 +1,28 @@
+id: hot_flood_npl_buildings_damage
+source_org: Humanitarian OpenStreetMap Team (HOT)
+access:
+  kind: hdx
+  dataset: hot_flood_npl_buildings_damage
+  refresh: daily
+  checksum: sha256
+license: Creative Commons Attribution International (CC BY)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: vector (building)
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: model_output
+confidence_tier: low
+good_for:
+- locating concentrations of probable structural damage
+cannot_tell_you:
+- severity, occupancy or casualties - it is a binary damage flag
+- anything under cloud, tree canopy or debris
+- buildings absent from the footprint layer never enter any score
+independence_group: cv_damage_vhr

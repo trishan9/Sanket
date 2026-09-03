@@ -1,0 +1,24 @@
+id: hot_flood_npl_extent
+source_org: Humanitarian OpenStreetMap Team, via HDX
+access:
+  kind: hdx
+  dataset: hot_flood_npl
+  refresh: daily
+  checksum: sha256
+license: Open Database License (ODC-ODbL)
+spatial:
+  crs: EPSG:32645
+  extent: [85.10, 27.80, 85.45, 28.55]
+  resolution: vector
+temporal:
+  observed: 2026-08-27
+  published: 2026-08-29
+claim_type: observation
+confidence_tier: medium
+good_for:
+  - a second, independently-sourced observed flood extent for validation
+  - cross-checking against CEMS EMSR927, which is classified as mass-movement rather than flood
+cannot_tell_you:
+  - depth, discharge, or duration - it is a single extent polygon
+  - anything about the source imagery or exact detection method used to derive it
+independence_group: hot_osm_mapping

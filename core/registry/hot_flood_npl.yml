@@ -1,0 +1,26 @@
+id: hot_flood_npl
+source_org: Humanitarian OpenStreetMap Team (HOT)
+access:
+  kind: hdx
+  dataset: hot_flood_npl
+  refresh: daily
+  checksum: sha256
+license: Open Database License (ODC-ODbL)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: vector
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: medium
+good_for:
+- counting exposed buildings, roads, bridges and critical facilities
+cannot_tell_you:
+- areas mappers had not yet reached at the time of extraction
+independence_group: hot_osm_mapping
