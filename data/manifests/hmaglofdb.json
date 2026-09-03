@@ -1,0 +1,35 @@
+{
+  "dataset": "hmaglofdb",
+  "source_org": "Shrestha, Steiner et al. 2023, ESSD 15:3941",
+  "license": "CC-BY-4.0",
+  "access": "github.com/fidelsteiner/HMAGLOFDB, Zenodo 10.5281/zenodo.7271187",
+  "independence_group": "hmaglofdb_record",
+  "claim_type": "observation",
+  "bbox": null,
+  "temporal": null,
+  "fetched_at": "2026-09-03T13:07:59.425078Z",
+  "files": [
+    {
+      "name": "HMAGLOFDB.csv",
+      "path": "data/bronze/hmaglofdb/HMAGLOFDB.csv",
+      "bytes": 451250,
+      "sha256": "c2dc614f38af3bcbc50c4aa7ee21c0a907a66bbcff6d5bf5140e49ce0acd4590",
+      "skipped": false
+    },
+    {
+      "name": "HMAGLOFDB_removed.csv",
+      "path": "data/bronze/hmaglofdb/HMAGLOFDB_removed.csv",
+      "bytes": 27942,
+      "sha256": "fbbcc3da4ef800b6e8de413ea7037e6290af3202b11e36763384288685cdd6dc",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "697 GLOFs 1833-2022 at publication"
+  ],
+  "cannot_tell_you": [
+    "events that were never reported - the record is documentary, not exhaustive",
+    "whether GLOF frequency is increasing; the authors describe the evidence as ambiguous",
+    "anything about lakes with no recorded outburst"
+  ]
+}

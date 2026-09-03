@@ -1,0 +1,35 @@
+{
+  "dataset": "hot_flood_npl_buildings_damage",
+  "source_org": "Humanitarian OpenStreetMap Team (HOT)",
+  "license": "Creative Commons Attribution International (CC BY)",
+  "access": "HDX CKAN package hot_flood_npl_buildings_damage",
+  "independence_group": "cv_damage_vhr",
+  "claim_type": "model_output",
+  "bbox": null,
+  "temporal": null,
+  "fetched_at": "2026-09-03T13:09:16.827858Z",
+  "files": [
+    {
+      "name": "Building damage assessment, GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl_buildings_damage/Building damage assessment, GeoJSON.geojson",
+      "bytes": 366172,
+      "sha256": "f3dee639995b25364ef1f30b379eec041b3034bbc7dd5d1eebd645df966e882a",
+      "skipped": false
+    },
+    {
+      "name": "Analyzed area (AOI clipped to post imagery extent), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl_buildings_damage/Analyzed area (AOI clipped to post imagery extent), GeoJSON.geojson",
+      "bytes": 52407,
+      "sha256": "54628601d1347eff485e1e8561396fa2a53fc2ab5c103b7d08dfb43ecd4fa2d8",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "hdx last modified: 2026-08-28T02:53:15"
+  ],
+  "cannot_tell_you": [
+    "severity, occupancy or casualties - it is a binary damage flag",
+    "anything under cloud, tree canopy or debris",
+    "buildings absent from the footprint layer never enter any score"
+  ]
+}

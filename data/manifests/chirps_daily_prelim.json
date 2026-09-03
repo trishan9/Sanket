@@ -1,0 +1,244 @@
+{
+  "dataset": "chirps_daily_prelim",
+  "source_org": "UCSB Climate Hazards Center, CHIRPS 2.0",
+  "license": "public domain (UCSB Climate Hazards Center)",
+  "access": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/prelim/global_daily/tifs/p05, windowed clip",
+  "independence_group": "chirps_precipitation",
+  "claim_type": "observation",
+  "bbox": [
+    85.1,
+    27.8,
+    85.45,
+    28.55
+  ],
+  "temporal": null,
+  "fetched_at": "2026-09-03T17:33:43.116130Z",
+  "files": [
+    {
+      "name": "chirps-2026-08-01.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-01.tif",
+      "bytes": 460,
+      "sha256": "e65f54faecb7cd04f936be469ac5d53cda86a38aef660ac3a5249bcaf24bc427",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-02.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-02.tif",
+      "bytes": 652,
+      "sha256": "354cebdde0cec220aa0599da68887f5b5de272c7c741eca699e75e982694442c",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-03.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-03.tif",
+      "bytes": 477,
+      "sha256": "4e92133f6e993ea91426ba6d4e09a2edd1352a1ba8714ea0defdaa4c679157a6",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-04.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-04.tif",
+      "bytes": 616,
+      "sha256": "f9dcd21860b51f5d299b540b7ebeb11e6a8e56ad25a407cbbf367cbb0f428892",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-05.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-05.tif",
+      "bytes": 718,
+      "sha256": "f7028913b1c4bac15665abd9eb1273cbf99545cf7a4cfac581b79b08d2282fad",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-06.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-06.tif",
+      "bytes": 804,
+      "sha256": "99ca78eb8eb57f1a8dfcd297a65dfc066f64d3a87cfc5d81116145e7ba7b8ae2",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-07.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-07.tif",
+      "bytes": 809,
+      "sha256": "2f78cc955e11b42d91b3c731f4b36eaaa4e395749f2e3e84404782147d30a817",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-08.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-08.tif",
+      "bytes": 683,
+      "sha256": "45929f19917930b3546aa0432160e242050ce0937e053b3515f1be9213241ff0",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-09.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-09.tif",
+      "bytes": 631,
+      "sha256": "44dcfbc2e6b59bb1097f6f598716ca07107ce2e3ff4b1885c05c697c85a752c3",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-10.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-10.tif",
+      "bytes": 431,
+      "sha256": "65ea5e60fa3608bea437a388a6d88014613948cc87268c2b98da6124180526d8",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-11.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-11.tif",
+      "bytes": 494,
+      "sha256": "0c1fb887e80ac23fe994f7f9f27c94e9be3af12ee9aa92a7a45abc6f7ec4c289",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-12.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-12.tif",
+      "bytes": 564,
+      "sha256": "93ad46efc00e3bba31e0b125c5e86b1e5e97a215115eccbb1a0bf9cc2f31994d",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-13.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-13.tif",
+      "bytes": 805,
+      "sha256": "138f4b9eb5e99e0d3b6585329909a345a2e64df50ca4a766f82ac3c5d42ce15c",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-14.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-14.tif",
+      "bytes": 459,
+      "sha256": "d3a3c5b027f34d523ce20bc66931da5b4db69d2949abf73ebd2855176a12ed6d",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-15.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-15.tif",
+      "bytes": 738,
+      "sha256": "dc632b012f469f1ce9393080fcba156d8c7e73885d2ecc2fef3e9045edfe3863",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-16.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-16.tif",
+      "bytes": 808,
+      "sha256": "7cf26d3f4513e3344a95afda2fd2a4f7d71d0e355fd913fe0105af99d9f956af",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-17.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-17.tif",
+      "bytes": 809,
+      "sha256": "41de42db18b6718d5c3f795c5ad59a9f2ab9221946a2b310057ea6fdab5590bc",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-18.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-18.tif",
+      "bytes": 809,
+      "sha256": "a71a6b17f7d7b6119982ceec734dbdf4949d84e81fbcb828c8fca3130a804ca0",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-19.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-19.tif",
+      "bytes": 809,
+      "sha256": "6a5b20e0a86e291c8dca506f0bd39c5e614dd4ae512be184d4ed4453c26776da",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-20.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-20.tif",
+      "bytes": 809,
+      "sha256": "73fcd5173288732f1df1737fe249811ced6891c452d839ef39e938ea3d83cf34",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-21.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-21.tif",
+      "bytes": 809,
+      "sha256": "af8ab51a1a113eebc3f6f7bba688810550c7a468a401c246fa5839b685bd9892",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-22.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-22.tif",
+      "bytes": 809,
+      "sha256": "db85211f1a40c5aa1a8cf18236219c36de3b6ecb1aa4b066494be996f55e1c8d",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-23.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-23.tif",
+      "bytes": 809,
+      "sha256": "7736234cd5757ab765075960a5e2bbbadd6a6212bd69e27b0cbf568c8b886539",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-24.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-24.tif",
+      "bytes": 808,
+      "sha256": "4ea5161ce83314803e6882df82f7f9e254d8c21a8fe553281891fe7614d78040",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-25.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-25.tif",
+      "bytes": 809,
+      "sha256": "ccc05af443676a1b88ce973bd6374ac26764f5cfecc34131332570bf67fa3a1c",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-26.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-26.tif",
+      "bytes": 809,
+      "sha256": "b6b8766564df73a70401496943b6d7051ffcd3c61f363b59c45031ed153373c1",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-27.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-27.tif",
+      "bytes": 809,
+      "sha256": "84b1f70884ec5ce094b419bf63f7322491d4bc48cfef334b8499281039e75c35",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-28.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-28.tif",
+      "bytes": 809,
+      "sha256": "edf27404568c3213b0a7cc9a247cb4c5c0c265d79d1a9b14810a46b7da6b18b4",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-29.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-29.tif",
+      "bytes": 799,
+      "sha256": "bb86f4765bef8f9f36a17a0531a10009aa64feb464b0e5b1d10db8cea008eecc",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-30.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-30.tif",
+      "bytes": 809,
+      "sha256": "3781a088e83114f5f905fa31a6c9afe66a763bf84cdfe41e63d6f7d486731851",
+      "skipped": true
+    },
+    {
+      "name": "chirps-2026-08-31.tif",
+      "path": "data/bronze/chirps_daily_prelim/chirps-2026-08-31.tif",
+      "bytes": 809,
+      "sha256": "07b36da7a7748fed8a9becbea5ad09cd7a29959aef14e9b451fdb114c297f724",
+      "skipped": true
+    }
+  ],
+  "notes": [
+    "PRELIMINARY product - gauge-corrected final not yet published for this window"
+  ],
+  "cannot_tell_you": [
+    "sub-daily intensity",
+    "snowfall or snowmelt at these elevations",
+    "a point measurement - it is a 0.05 degree gridded blend",
+    "final values, which may revise once gauge data is incorporated"
+  ]
+}

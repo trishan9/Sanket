@@ -1,0 +1,661 @@
+{
+  "dataset": "opera_l3_dswx_s1_v1",
+  "source_org": "NASA / JPL OPERA",
+  "license": "public domain (NASA)",
+  "access": "earthaccess + NASA CMR C2949811996-POCLOUD",
+  "independence_group": "opera_radar_water",
+  "claim_type": "observation",
+  "bbox": [
+    85.1,
+    27.8,
+    85.45,
+    28.55
+  ],
+  "temporal": [
+    "2026-01-01",
+    "2026-06-30"
+  ],
+  "fetched_at": "2026-09-03T13:06:25.073000Z",
+  "files": [
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260825T223035Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260825T223035Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89573,
+      "sha256": "5c7c00a2025b3c7df58355dccf8e40463e91d0ddc865cd0804140fc44ca023fe",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260825T223035Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260825T223035Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 96496,
+      "sha256": "c909f7576742a6a3cd8a0e685f67ea814a12a9b5ef0fb645ffadcefd9be37c95",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121350Z_20260826T060019Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121350Z_20260826T060019Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89598,
+      "sha256": "8d88c04ed5ee5d052fc0eabf074331b1ac609e23b811f4b8f7781aa2a37299b7",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121350Z_20260826T060019Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121350Z_20260826T060019Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 95817,
+      "sha256": "0dc2fe20aa27e0430a4756c5dc7226725b90957be83498a7edfef851886b4479",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260528T235008Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260528T235008Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89248,
+      "sha256": "928c5007799807cd9aa66260f540a88f20f52d97c742aa743a70fa77633e0c1b",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260528T235008Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260528T235008Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 95868,
+      "sha256": "0ac0b4fe7c138ec2ff8b0168ebe35f39b4fd97e8363fb5c767b7d7d9ef4f70ee",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260616T021012Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260616T021012Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89248,
+      "sha256": "39ec8e632e7754a0bfbfdfc368b37ecc4cb6566beec03cba064a8363c607fc3a",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260616T021012Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260616T021012Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 95868,
+      "sha256": "36c27705cd2d38fc8e90ca99522b30469de600d24d794522d797688e153f4ebb",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260616T021136Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260616T021136Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89248,
+      "sha256": "82042f2a5a95296448a002b8dc6485b2be2c5712ae55d80e4e0e1fd87529395d",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260616T021136Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260524T121349Z_20260616T021136Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 95868,
+      "sha256": "5f6539ec85c0690b0ab36a9462a146b40338befb9343e827ea1796e16b0dc042",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260530T004212Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260530T004212Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 981113,
+      "sha256": "cbac935faffbcb1308f4cbaaef1cafb68975e00e8a41a070aa7b2b9beeb16728",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260530T004212Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260530T004212Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1854030,
+      "sha256": "8fdbe565b60b6619b0e4701016feb8a56e86b3d2ad5478cb6e67bd4543bb3556",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260616T135835Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260616T135835Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 981113,
+      "sha256": "3b0d5503025e5418722d0e5bb8d5cc6170c9b235a91ce4f3452a449b228be1a3",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260616T135835Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260616T135835Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1854030,
+      "sha256": "f638fb074ad5559af286c40b284c3f9fa6328eb184eb3d0ef4175eed9ecc8fcf",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260616T140505Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260616T140505Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 981113,
+      "sha256": "f54741153eda4d7477e3b1da450870eea1296ea8b52d71eb47bedace74302443",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260616T140505Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260616T140505Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1854030,
+      "sha256": "ddabbc4209f74f05a57a95c285c07f1677f2b12f9182f27a9efaaa1e08d4e8f4",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260828T061804Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260828T061804Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 988976,
+      "sha256": "b5c48d17e1d04d1149e55af72a6e32080131d341990e8f546a14f281d4844f72",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260828T061804Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260529T122203Z_20260828T061804Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1869673,
+      "sha256": "d0cfe98d88dd3ad863a75eef82e9ad3117e810cedadc40182a00e0da64eaa084",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260530T004212Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260530T004212Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1086502,
+      "sha256": "4b99850ce9a6edc836d151a831cbfc0d8cc0a69c8f266a3235abec9e29d0ce85",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260530T004212Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260530T004212Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 2155586,
+      "sha256": "f9821c3706d38d4d2d776800310623d5ddc21eaf5aaf775924b34bfe461e89fe",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260616T135835Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260616T135835Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1086502,
+      "sha256": "04fe3fd79056d22deb41b15de8b208ef5a23acde6e32f9dcd386b938f15e4abf",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260616T135835Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260616T135835Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 2155586,
+      "sha256": "d62e7fac8ba8b59b015ffa75e9c5cc915ad63ac014186da25edecd21ecf3b362",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260616T140505Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260616T140505Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1086502,
+      "sha256": "65a69cdf54ce3807b91c01452a1eaf28d80a16fddb3dfd7c84160b6058cf6008",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260616T140505Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260616T140505Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 2155586,
+      "sha256": "fdcae124a487f3e45bde218b7923f5f1b288abf0bd33d675ab1b2c685d98bb8e",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260828T061804Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260828T061804Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1241718,
+      "sha256": "ce2f01046d8ab43de4a26bdf88b4ea2b5298de830c239f6d19f3c34580268f4d",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260828T061804Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260529T122203Z_20260828T061804Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 2447855,
+      "sha256": "7dc4b4fb7cf555f1bf075ab71742353473648e93cf97c4b2e7e4984be1ef3ad6",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260601T001110Z_20260829T040651Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260601T001110Z_20260829T040651Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 660761,
+      "sha256": "f5d55d9fb908db7144619b1afbe3804e7931b542f60254ae9d4c26a34faeca41",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260601T001110Z_20260829T040651Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260601T001110Z_20260829T040651Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1393020,
+      "sha256": "9384137186d7cd83494a3fd7327509295a0987c58b077b6403291bf3eb666121",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260601T001110Z_20260829T040639Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260601T001110Z_20260829T040639Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 660761,
+      "sha256": "6573423a01ed370f112c486ba64b38c8a7607ae083789939fa2260bb66efff85",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260601T001110Z_20260829T040639Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260601T001110Z_20260829T040639Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1393020,
+      "sha256": "df4303e346d40023c0e63beb25bec82d6cf04be0cdd947534555ea7c7c650e84",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260829T040651Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260829T040651Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 709025,
+      "sha256": "0641024b765b606acd9d6acdff32eb88e2e8a4f1b70991ed31c27806bb554557",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260829T040651Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260829T040651Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1416216,
+      "sha256": "534e522d4c27d14d250a1fe73b34d9aba61237c636030f26682dad6dd518d7f8",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260829T040639Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260829T040639Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 709025,
+      "sha256": "60d9a406511115075e9dbed8e00eb2cd6f6cbdf307ee7bd2d0fdf5264c5613ab",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260829T040639Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260829T040639Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1416216,
+      "sha256": "e70bb018bf8ec210b5ebf10f81b5806bee18d5e6edc67c84ede202e22defcfb0",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260601T104022Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260601T104022Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 310530,
+      "sha256": "fa442c94d0d85dfb9790ff42c3780e548db18856402c6d8dd5521d9aecfa75a4",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260601T104022Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260601T001110Z_20260601T104022Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 678727,
+      "sha256": "2c7f03f1fec17f11e09cb13970508ce61626e9a8f99d6cde3973ae3e747a9494",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260609T223850Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260609T223850Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89537,
+      "sha256": "9cf31a6fa416a26710dae52f9a14d117217ae51efca8590e4343e602c1f488a4",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260609T223850Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260609T223850Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 96184,
+      "sha256": "f9e2cfffa780261d9dbd9ff7ccc598317c175d789c0c20763ee7f5cd4a70d3f1",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260825T223912Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260825T223912Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89533,
+      "sha256": "ec1533ddc802f0bee2475389f997a30f232f29e5bcaf02c00d598d442b87a98b",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260825T223912Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260825T223912Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 95904,
+      "sha256": "127e31e87a69a5cdd496e116a26954944f40ea7f3c43c6e0eb35532624244f18",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260826T065936Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260826T065936Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89533,
+      "sha256": "958dcad0148d4085689d98aa420c74ba22a074e70f2872119bf067ebe9bc3bda",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260826T065936Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260605T121348Z_20260826T065936Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 95904,
+      "sha256": "d66e8ad4e7471a4614c7c968c3e579a73dc30a7f2cd7ffc7bd612a8f0214f6f2",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260610T055024Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260610T055024Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1127154,
+      "sha256": "1cdaef0c5d4ef09cfe0581688be35c64526874b9bf588da584965c3e13fb6097",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260610T055024Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260610T055024Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 2010482,
+      "sha256": "391582caa4fd4f08fdfdac55c592bc4ca5ba48129169a2c7567f1855d7344ba9",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T091948Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T091948Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1127459,
+      "sha256": "60fb82c60aba4f2eb2c1fe4a3e7e297684557368a52f0d30943d4ab684794f5b",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T091948Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T091948Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1983887,
+      "sha256": "a5f3420d6ae068743076a398c38a0e6e7afe0f3c1838b228383b10a1e0fd2238",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T104124Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T104124Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1127459,
+      "sha256": "3e31179bbb42be720da0f081aafada6d383e2680d5d46ae27313ba069dc31a2a",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T104124Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T104124Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1983887,
+      "sha256": "284a74ebd01c68644a69d4a3bf415a48e1149a6a645e20cb3185315bf7a8b818",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T164341Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T164341Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1127459,
+      "sha256": "52f6c46a56db6694142fa378eec75cd3a3024cefea76d01c5a9a2b4712a61a14",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T164341Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T164341Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1983887,
+      "sha256": "10a3ecd800b83159c2ee9f0b318ec8a636b92ba08ce8b1ba2738b0937a5a32bb",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T191802Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T191802Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1127459,
+      "sha256": "6e4a0ea83388ed90609a0d9d76f038645dc16d94116175fddc3b9c9a647af85f",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T191802Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T191802Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1983887,
+      "sha256": "249a39c63f55b811f7235efab69a87a2075e7121e1a11e468e66e608da1dd8e6",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T202646Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T202646Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1127459,
+      "sha256": "9a3ae14b1c8f4da9a26344a253b21bca301609b20b4c662761092529a785c499",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T202646Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260606T001923Z_20260826T202646Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1983887,
+      "sha256": "5c12a55c99bdef1cd970cc9f4e6b2a4e80486159db44fcc0191e41448bcc131d",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260610T055024Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260610T055024Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 833874,
+      "sha256": "80fe207f836a5ecfa61d3225bc1370c742715b1d422d9e836aa465f465a3928e",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260610T055024Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260610T055024Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1554504,
+      "sha256": "084f5694cda64ca799954609e4c99a0582cb8840a3931c3ed3b7db974fcd1b9d",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T091948Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T091948Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 833806,
+      "sha256": "ae1afc1870096ecb9cc3fade4ad902fd6cee9fa1917eb8461d1c33d9e76f8f8f",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T091948Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T091948Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1554590,
+      "sha256": "aad7aabef956777feb6198c6092e8eee341418ba26f08a3c2c194e3e975737a6",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T104124Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T104124Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 833806,
+      "sha256": "16069412c6d7479f5e1845ea705a9be0efab15ddc9897bcff07f53277b996f63",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T104124Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T104124Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1554590,
+      "sha256": "4c0e88cea608dc8faaa81bbb9f373bd360121cd66528f76100a97e36a45c3b4a",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T164341Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T164341Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 833806,
+      "sha256": "4fd3c3eec973421e957d619a4dcbd20e65ec05ab77f4c6e8143587d7f76eadf6",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T164341Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T164341Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1554590,
+      "sha256": "e295578c41395b2704c218b41d08ae9874a7c2493c198594022f7a07d47daaa1",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T191802Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T191802Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 833806,
+      "sha256": "6ff702ba408170e1ce0775022c02c9edec1c0a64ed37dae7c103eb21d0cb7507",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T191802Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T191802Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1554590,
+      "sha256": "10317826c66f7427437878c9bf57769c16225adce1a42d66fcc1b8c7bc312c70",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T202646Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T202646Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 833806,
+      "sha256": "b96ba50511a33ae3856d017f80cdf87b3038b0016fd71700e16eb42427bbe044",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T202646Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260606T001923Z_20260826T202646Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1554590,
+      "sha256": "5f762273b93a8c0d7091ab0dc93d121aa3be0b94f02945290e3c196894f7f659",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260610T122202Z_20260615T073132Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260610T122202Z_20260615T073132Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 679030,
+      "sha256": "e1ce47434fb492ea365d3b2068b5d3cc01860acff26b8c76605c8c77dc90f2d8",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260610T122202Z_20260615T073132Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260610T122202Z_20260615T073132Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1370125,
+      "sha256": "b0507984aa00bdfa89fc2feda3c2feff628eab5dd2b453654088996732432b9a",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260610T122202Z_20260615T105945Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260610T122202Z_20260615T105945Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 988286,
+      "sha256": "e16141fbcae58dc1cd0ea720d51eb5f05f68075756af5bd64465641cdeb7e9f5",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260610T122202Z_20260615T105945Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260610T122202Z_20260615T105945Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1899660,
+      "sha256": "6ed32adb55e27ce8c9a5d92073d22107855af723ebe7a42348eafc4b58c31925",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260610T122202Z_20260615T105945Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260610T122202Z_20260615T105945Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1241627,
+      "sha256": "b4312435fa07b02b81c961d39179fdd094ff673a6db722646059fc7f8446083a",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260610T122202Z_20260615T105945Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260610T122202Z_20260615T105945Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 2446697,
+      "sha256": "5fcb2cda518d27e46c52475e44511f90b072234bf67869e0aead73f81c08619e",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260613T001107Z_20260617T201509Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260613T001107Z_20260617T201509Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 661488,
+      "sha256": "8c43599fa3686819735261d8cbbeac246d7ddf732576967cb4ae353c15f4a590",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260613T001107Z_20260617T201509Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260613T001107Z_20260617T201509Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1433066,
+      "sha256": "135173198ad7954c5db813bb5c836036ffddf1d6eb6675844e5fbe25c9d7387a",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260613T001107Z_20260617T201509Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260613T001107Z_20260617T201509Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 711106,
+      "sha256": "18e3f13824e44ba52295e7a6b7c8840c80cda86420e2f348e9a3f6cb473a8292",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260613T001107Z_20260617T201509Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260613T001107Z_20260617T201509Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1379266,
+      "sha256": "e14e64166510f32322da045157ae46710b829a7a774c71b0032b8e457614293a",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260617T121347Z_20260825T223502Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260617T121347Z_20260825T223502Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 89386,
+      "sha256": "2391206ab157824f8647adfd038eff694b8b0b165a544402d974f87a46eca5af",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260617T121347Z_20260825T223502Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260617T121347Z_20260825T223502Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 95411,
+      "sha256": "266d264248eb36842007211824951b79cb21af2f2ea75d85b7e564b455a22da4",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260618T001922Z_20260826T092042Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260618T001922Z_20260826T092042Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1125949,
+      "sha256": "ce2004d44fafb3f6df6b258ef95cdb623e90118d17dc38b7a3b814ce8d201af0",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260618T001922Z_20260826T092042Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260618T001922Z_20260826T092042Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 2051579,
+      "sha256": "7b1e3448cd2850c5f59f07c56c8837b5294718723a6d3d2551758444d244adbf",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260618T001922Z_20260826T092042Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260618T001922Z_20260826T092042Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 832495,
+      "sha256": "0b5751ce840952784a59dc12ba55095efe7be3e7de63a9b9bb9ae6a2516a7b71",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260618T001922Z_20260826T092042Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260618T001922Z_20260826T092042Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1635338,
+      "sha256": "efac0511ac916311b68982dfefd0861f76514a62f8a6eed5936477a931890c7a",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260622T122202Z_20260828T062129Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260622T122202Z_20260828T062129Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 988690,
+      "sha256": "7b8ba9d0028b0df283442688fc45cd2ddc7b780cef38280ffa38941492a280f3",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260622T122202Z_20260828T062129Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260622T122202Z_20260828T062129Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1895782,
+      "sha256": "2a210cf1d827c8a727299d2656357af1099b9a4195a30a978133395fbf24a472",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260622T122202Z_20260828T062129Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260622T122202Z_20260828T062129Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 1241564,
+      "sha256": "a37386cf42a8b9d6cdf7a96dbec07e599246bed60bc0dd3facab0078e23dfb70",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260622T122202Z_20260828T062129Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260622T122202Z_20260828T062129Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 2465993,
+      "sha256": "7892cea329dbf7a8b27ff4de010e45408ac427df58a647407c3d9c68542595f4",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260625T001106Z_20260829T040758Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260625T001106Z_20260829T040758Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 661175,
+      "sha256": "19dd215e80e12a022f88a8b2d8063221144c66fa33a33095c4637708fba465ab",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUM_20260625T001106Z_20260829T040758Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUM_20260625T001106Z_20260829T040758Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1409179,
+      "sha256": "bd9fe892e3b28db1157ec8d56bdaade14437acedb96188d900e9f48e68c8fb15",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260625T001106Z_20260829T040758Z_S1A_30_v1.0_B01_WTR.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260625T001106Z_20260829T040758Z_S1A_30_v1.0_B01_WTR.tif",
+      "bytes": 710118,
+      "sha256": "864471480382d78412280dd81b3f2cdd54d35948c7cce1e2321e684b8b4e44e3",
+      "skipped": false
+    },
+    {
+      "name": "OPERA_L3_DSWx-S1_T45RUL_20260625T001106Z_20260829T040758Z_S1A_30_v1.0_B03_CONF.tif",
+      "path": "data/bronze/opera_l3_dswx_s1_v1/OPERA_L3_DSWx-S1_T45RUL_20260625T001106Z_20260829T040758Z_S1A_30_v1.0_B03_CONF.tif",
+      "bytes": 1379383,
+      "sha256": "bf96ee32b42257f584fe11a00335c7820373dac5960ab67b1c08f32555269403",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "no as_of filter applied",
+    "layers: WTR, CONF",
+    "granules matched: 45"
+  ],
+  "cannot_tell_you": [
+    "water under dense canopy or in radar layover and shadow",
+    "water bodies below roughly 3000 square metres",
+    "depth, volume or discharge - it is an extent product"
+  ]
+}

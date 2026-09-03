@@ -1,0 +1,35 @@
+{
+  "dataset": "worldpop",
+  "source_org": "WorldPop, University of Southampton",
+  "license": "CC-BY-4.0",
+  "access": "https://data.worldpop.org/GIS/Population/Global_2000_2020_Constrained/2020/BSGM/NPL, windowed COG clip",
+  "independence_group": "worldpop_population",
+  "claim_type": "model_output",
+  "bbox": [
+    85.1,
+    27.8,
+    85.45,
+    28.55
+  ],
+  "temporal": null,
+  "fetched_at": "2026-09-03T13:21:39.456295Z",
+  "files": [
+    {
+      "name": "npl_ppp_2020_constrained.tif",
+      "path": "data/bronze/worldpop/npl_ppp_2020_constrained.tif",
+      "bytes": 35442,
+      "sha256": "0b01273c55f0231f619b736a155be917222401c27bd579ba890542fe8c6309c6",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "constrained UN-adjusted 2020 population, 100 m",
+    "national raster downloaded, then clipped locally: the WorldPop server does not support range requests"
+  ],
+  "cannot_tell_you": [
+    "who was actually present - it models usual residence",
+    "displacement after 26 August 2026",
+    "anything at building resolution; counts are order-of-magnitude",
+    "population change since 2020"
+  ]
+}

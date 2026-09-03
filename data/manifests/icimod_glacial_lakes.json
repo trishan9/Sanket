@@ -1,0 +1,136 @@
+{
+  "dataset": "icimod_glacial_lakes",
+  "source_org": "ICIMOD / UNDP",
+  "license": "ICIMOD RDS data download agreement, research use",
+  "access": "manual download, DOI 10.26066/RDS.1971950 and 10.26066/RDS.1971946",
+  "independence_group": "icimod_inventory",
+  "claim_type": "observation",
+  "bbox": null,
+  "temporal": null,
+  "fetched_at": "2026-09-03T13:06:29.757260Z",
+  "files": [
+    {
+      "name": "PDGLs.cpg",
+      "path": "data/bronze/manual/icimod/Potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/PDGLs.cpg",
+      "bytes": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "skipped": false
+    },
+    {
+      "name": "PDGLs.dbf",
+      "path": "data/bronze/manual/icimod/Potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/PDGLs.dbf",
+      "bytes": 9835,
+      "sha256": "ea4151a03847cd7645de4f32939eb4ddb05500d07c44eff76ed46037d141a7f8",
+      "skipped": false
+    },
+    {
+      "name": "PDGLs.prj",
+      "path": "data/bronze/manual/icimod/Potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/PDGLs.prj",
+      "bytes": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+      "skipped": false
+    },
+    {
+      "name": "PDGLs.sbn",
+      "path": "data/bronze/manual/icimod/Potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/PDGLs.sbn",
+      "bytes": 540,
+      "sha256": "d3b675f4743142734649789cde8c7a70228d0fceef6efd0313eea34d3e63c036",
+      "skipped": false
+    },
+    {
+      "name": "PDGLs.sbx",
+      "path": "data/bronze/manual/icimod/Potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/PDGLs.sbx",
+      "bytes": 124,
+      "sha256": "0e0cb180154d3a8c87eb9beafa7fd87c78df2870d1750a3134eefa2b9013a331",
+      "skipped": false
+    },
+    {
+      "name": "PDGLs.shp",
+      "path": "data/bronze/manual/icimod/Potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/PDGLs.shp",
+      "bytes": 86284,
+      "sha256": "599ecca364fefc8e15ce448769929fb6903c28eb2619b800bb67b60289898fdf",
+      "skipped": false
+    },
+    {
+      "name": "PDGLs.shp.xml",
+      "path": "data/bronze/manual/icimod/Potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/PDGLs.shp.xml",
+      "bytes": 82635,
+      "sha256": "070d71daddaddb3582c999b04657ac266305eefb6c8adc85662e9e900c41ea32",
+      "skipped": false
+    },
+    {
+      "name": "PDGLs.shx",
+      "path": "data/bronze/manual/icimod/Potentially dangerous glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/PDGLs.shx",
+      "bytes": 476,
+      "sha256": "43c153da95526080e514744cb53291fbd430b51a0f930e07243642fecc3c9b3e",
+      "skipped": false
+    },
+    {
+      "name": "GL_3basins_2015.CPG",
+      "path": "data/bronze/manual/icimod/Glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/GL_3basins_2015.CPG",
+      "bytes": 5,
+      "sha256": "3ad3031f5503a4404af825262ee8232cc04d4ea6683d42c5dd0a2f2a27ac9824",
+      "skipped": false
+    },
+    {
+      "name": "GL_3basins_2015.dbf",
+      "path": "data/bronze/manual/icimod/Glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/GL_3basins_2015.dbf",
+      "bytes": 594690,
+      "sha256": "2782cc7679f86ae3863314c578deabf12f6fbc26c08edfff82891d1fbac6aa81",
+      "skipped": false
+    },
+    {
+      "name": "GL_3basins_2015.prj",
+      "path": "data/bronze/manual/icimod/Glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/GL_3basins_2015.prj",
+      "bytes": 145,
+      "sha256": "a02a27b1d1982c8516d83398e85a3c8b1aef1713c13ef4d84d7bde17430c07c4",
+      "skipped": false
+    },
+    {
+      "name": "GL_3basins_2015.sbn",
+      "path": "data/bronze/manual/icimod/Glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/GL_3basins_2015.sbn",
+      "bytes": 34012,
+      "sha256": "98f22dc14e4190d2863642b5d5fc69b73762484fb85b91a2cd036289d7619e62",
+      "skipped": false
+    },
+    {
+      "name": "GL_3basins_2015.sbx",
+      "path": "data/bronze/manual/icimod/Glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/GL_3basins_2015.sbx",
+      "bytes": 1364,
+      "sha256": "d4736805f59c4cf0ccb0d238dd5cfd849b5297ec1a0a8feef7226f62f1df1065",
+      "skipped": false
+    },
+    {
+      "name": "GL_3basins_2015.shp",
+      "path": "data/bronze/manual/icimod/Glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/GL_3basins_2015.shp",
+      "bytes": 2937836,
+      "sha256": "71bb8112d454e3071c437bda5f09eecbfa653cf62e424d8520c3fe916d47ac60",
+      "skipped": false
+    },
+    {
+      "name": "GL_3basins_2015.shp.xml",
+      "path": "data/bronze/manual/icimod/Glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/GL_3basins_2015.shp.xml",
+      "bytes": 70375,
+      "sha256": "ffe87de5a7efa34501ad1fd96e42e7c70ce6ace6e4b4ee2e98c54e5f4914aed1",
+      "skipped": false
+    },
+    {
+      "name": "GL_3basins_2015.shx",
+      "path": "data/bronze/manual/icimod/Glacial lakes in the Koshi, Gandaki, and Karnali river basins of Nepal, the Tibet Autonomous Region of China, and India/data/GL_3basins_2015.shx",
+      "bytes": 29092,
+      "sha256": "60388a2adc91a0e4e79f6cb26ccdf0762b729ed41318cf4f84962e29cb9d1a2f",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "PDGLs: 47 ({'China': 25, 'Nepal': 21, 'India': 1})",
+    "inventory 2015: 3624 lakes",
+    "inventory epoch is 2015; lakes formed since are absent by construction"
+  ],
+  "cannot_tell_you": [
+    "lakes that formed after the 2015 inventory epoch",
+    "lakes below the imagery detection floor of roughly 0.003 square kilometres",
+    "whether a listed lake is currently impounding water - it is a static inventory",
+    "the 2026 Lhende source: 25 lakes sit in that catchment and none is PDGL-listed"
+  ]
+}

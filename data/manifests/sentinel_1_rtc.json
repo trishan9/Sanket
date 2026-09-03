@@ -1,0 +1,178 @@
+{
+  "dataset": "sentinel_1_rtc",
+  "source_org": "Microsoft Planetary Computer / ESA Copernicus",
+  "license": "CC-BY-4.0 (Copernicus)",
+  "access": "STAC planetarycomputer collection sentinel-1-rtc, windowed COG clip",
+  "independence_group": "sanket_radar",
+  "claim_type": "observation",
+  "bbox": [
+    85.1,
+    27.8,
+    85.45,
+    28.55
+  ],
+  "temporal": [
+    "2026-07-01",
+    "2026-09-03"
+  ],
+  "fetched_at": "2026-09-03T13:12:34.604620Z",
+  "files": [
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260702T001034_20260702T001059_003487_0062AB_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260702T001034_20260702T001059_003487_0062AB_rtc_vv.tif",
+      "bytes": 18280166,
+      "sha256": "250c9e5f517670e703a2436871a1c00e023bc877b9e021e6e59bc91302d882e3",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260707T001841_20260707T001906_003560_006530_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260707T001841_20260707T001906_003560_006530_rtc_vv.tif",
+      "bytes": 107137153,
+      "sha256": "baee18aeaeb97d17f091a74987ecfb06edb6bbdd29a0a457bc4719b3897fc098",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260711T122139_20260711T122204_003626_00675A_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260711T122139_20260711T122204_003626_00675A_rtc_vv.tif",
+      "bytes": 106441776,
+      "sha256": "fc5010b2dfddf32079a653f57cdc0375a62e5731f7bcd73d2151f65998631cae",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260711T122139_20260711T122204_003626_00675A_rtc_vh.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260711T122139_20260711T122204_003626_00675A_rtc_vh.tif",
+      "bytes": 106080445,
+      "sha256": "80ed2bd7a533f3d012266b16045e99d7d09490fa823bbfcd2fcdf3255c1f1aec",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260714T001035_20260714T001100_003662_00689F_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260714T001035_20260714T001100_003662_00689F_rtc_vv.tif",
+      "bytes": 18202615,
+      "sha256": "e3710158bd99b50cd721b21c0c6770a061361391dbd4fd59a26fa2b8ff7478a7",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260719T001842_20260719T001907_003735_006B26_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260719T001842_20260719T001907_003735_006B26_rtc_vv.tif",
+      "bytes": 107110529,
+      "sha256": "7785cd7188d2f3789d9dd7fc881cbf5cdaee4fe6c2201f409b7b8f3cad42afe5",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260723T122140_20260723T122205_003801_006D5D_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260723T122140_20260723T122205_003801_006D5D_rtc_vv.tif",
+      "bytes": 106434317,
+      "sha256": "8035449f16e0d2d7d7f2e957695f4f37101a29caeeff3cc18f7d7add6a729cdd",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260723T122140_20260723T122205_003801_006D5D_rtc_vh.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260723T122140_20260723T122205_003801_006D5D_rtc_vh.tif",
+      "bytes": 106073379,
+      "sha256": "1ed781a60470300f2a5ca277021477125bdd3fdcd7a5d83d62bf52ade23efec0",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260726T001036_20260726T001101_003837_006EA0_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260726T001036_20260726T001101_003837_006EA0_rtc_vv.tif",
+      "bytes": 18431946,
+      "sha256": "1a4af46de736b432f379c40a0d15b87ff9ebeeb62a37c7161453a4ae858b730a",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260731T001843_20260731T001908_003910_007127_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260731T001843_20260731T001908_003910_007127_rtc_vv.tif",
+      "bytes": 107098140,
+      "sha256": "e1f13a04c705c86b487c2b1a5d91e4719fc6b6b91a942b19954333d1b9b004a6",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260804T122140_20260804T122205_003976_00737A_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260804T122140_20260804T122205_003976_00737A_rtc_vv.tif",
+      "bytes": 106400214,
+      "sha256": "b8e185cd861b4e0cc2e487ceb5a32917d78eebb2229c9807d147ef4fafada473",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260804T122140_20260804T122205_003976_00737A_rtc_vh.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260804T122140_20260804T122205_003976_00737A_rtc_vh.tif",
+      "bytes": 105992023,
+      "sha256": "afb1441f2e4bd2f36ccd14243c47fdea5054ea8bd8b3c925aa317c397f0f0a57",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260807T001036_20260807T001101_004012_0074B7_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260807T001036_20260807T001101_004012_0074B7_rtc_vv.tif",
+      "bytes": 18149909,
+      "sha256": "27d6b983c3b5f34dcfc88ce1e76c352fa5994d9d104e0deddc4c3a41920e443e",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260812T001844_20260812T001909_004085_007738_rtc_vv.tif",
+      "bytes": 107085615,
+      "sha256": "746def41fe30fa09eaa52e6a36c496220199c5a6a888b1de20e7e0cb1d48873c",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_rtc_vv.tif",
+      "bytes": 106399762,
+      "sha256": "b349814af955a841136d7f4f38ae1de9b0d8af8420ce62432914e9499e4d6c73",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_rtc_vh.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260816T122141_20260816T122206_004151_007980_rtc_vh.tif",
+      "bytes": 106048032,
+      "sha256": "0a5abd7de1e73fc4524051903a809cbf9cc02109edf9c647cbbb80631df2e4b0",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260819T001036_20260819T001101_004187_007ABD_rtc_vv.tif",
+      "bytes": 17921280,
+      "sha256": "0f5eecd9929890de00999892c1f06a7a1484f5d6f61798d5ad97ef2afd7b862f",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260824T001844_20260824T001909_004260_007D5D_rtc_vv.tif",
+      "bytes": 107080384,
+      "sha256": "d58e5bba41c68e21a4e4cf7c957ebc4f8866704b688d97bbc9486c27eb3c9ebc",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_rtc_vv.tif",
+      "bytes": 106405589,
+      "sha256": "d677fde15b79c6737d277a9f0144f06f6ed5b55e072fe93f0907d459cfde72f6",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_rtc_vh.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260828T122141_20260828T122206_004326_007FA4_rtc_vh.tif",
+      "bytes": 106052488,
+      "sha256": "3779b6f8b56993ed4b92440d5e0daa659c52f01c8ce9b7b72e926ca31a291035",
+      "skipped": false
+    },
+    {
+      "name": "S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_rtc_vv.tif",
+      "path": "data/bronze/sentinel_1_rtc/S1D_IW_GRDH_1SDV_20260831T001037_20260831T001102_004362_0080EC_rtc_vv.tif",
+      "bytes": 18169379,
+      "sha256": "970173e1f44a4344235bf743dfc095c0c5b958cb2c2ab511c5bb331d5a0a594d",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "items matched: 16",
+    "radiometrically terrain corrected, already EPSG:32645 at 10 m",
+    "carries the event window because OPERA DSWx-S1 stops over this corridor on 2026-06-25"
+  ],
+  "cannot_tell_you": [
+    "the valley floor where radar layover and shadow obliterate it in steep terrain",
+    "water depth - backscatter gives extent, not volume",
+    "open water smaller than a few 10 m pixels"
+  ]
+}

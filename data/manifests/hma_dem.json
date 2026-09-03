@@ -1,0 +1,41 @@
+{
+  "dataset": "hma_dem",
+  "source_org": "NASA NSIDC",
+  "license": "public domain (NASA)",
+  "access": "earthaccess + NASA CMR C3249536691-NSIDC_CPRD",
+  "independence_group": "hma_dem_terrain",
+  "claim_type": "observation",
+  "bbox": [
+    85.1,
+    27.8,
+    85.45,
+    28.55
+  ],
+  "temporal": null,
+  "fetched_at": "2026-09-03T12:15:17.697368+00:00",
+  "files": [
+    {
+      "name": "HMA_DEM8m_MOS_20170716_tile-642.tif",
+      "path": "data/bronze/hma_dem/HMA_DEM8m_MOS_20170716_tile-642.tif",
+      "bytes": 360496750,
+      "sha256": "9173b650e419bed6c223a63fbb4fa0780fdb305ea92a397f6ad3ede275dcd557",
+      "skipped": false
+    },
+    {
+      "name": "HMA_DEM8m_MOS_20170716_tile-675.tif",
+      "path": "data/bronze/hma_dem/HMA_DEM8m_MOS_20170716_tile-675.tif",
+      "bytes": 364972568,
+      "sha256": "4df163d19b77feabbba14a787a7b251c366b98695a52009217178c6a9d577908",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "acquired 2017-07-16",
+    "9 years before the 2026-08-26 event; every routing output on this DEM carries that caveat",
+    "no fallback for this dataset - registration required, see MANUAL_DOWNLOADS.md A1"
+  ],
+  "cannot_tell_you": [
+    "post-event terrain - the channel has been reshaped by an enormous volume of debris",
+    "anything about the barrier lake's current state; this is pre-event terrain only"
+  ]
+}

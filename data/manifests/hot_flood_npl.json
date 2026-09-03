@@ -1,0 +1,159 @@
+{
+  "dataset": "hot_flood_npl",
+  "source_org": "Humanitarian OpenStreetMap Team (HOT)",
+  "license": "Open Database License (ODC-ODbL)",
+  "access": "HDX CKAN package hot_flood_npl",
+  "independence_group": "hot_osm_mapping",
+  "claim_type": "observation",
+  "bbox": null,
+  "temporal": null,
+  "fetched_at": "2026-09-03T13:08:53.819432Z",
+  "files": [
+    {
+      "name": "Area of Interest, GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Area of Interest, GeoJSON.geojson",
+      "bytes": 228546,
+      "sha256": "2e30166e56d7d8bffc2a8cfa24643cd72a4245dd13cc028e664120a60345aecd",
+      "skipped": false
+    },
+    {
+      "name": "Bridge Damage Assessment, GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Bridge Damage Assessment, GeoJSON.geojson",
+      "bytes": 28342,
+      "sha256": "79f19c9a864ef5eb232848075530cec422375ad2b04ee12b417f86942f41b0eb",
+      "skipped": false
+    },
+    {
+      "name": "Bridges (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Bridges (OSM), GeoJSON.geojson",
+      "bytes": 15450,
+      "sha256": "65377cafdb9405698e3e136f1134c9ed8e0dcbc8dd714c5b37e569b84a96ae6a",
+      "skipped": false
+    },
+    {
+      "name": "Destroyed and Damaged Features (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Destroyed and Damaged Features (OSM), GeoJSON.geojson",
+      "bytes": 191130,
+      "sha256": "2766f78e4ccda61e37e1dc2f473c1147047bbe905f0e1fc3c6e69673043dbd4d",
+      "skipped": false
+    },
+    {
+      "name": "Education Facilities (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Education Facilities (OSM), GeoJSON.geojson",
+      "bytes": 9871,
+      "sha256": "9ffb5785b030819a17b9ce8443a3f811221bdda5d883fa6a87e87c100985464f",
+      "skipped": false
+    },
+    {
+      "name": "Education Facilities (Overture), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Education Facilities (Overture), GeoJSON.geojson",
+      "bytes": 6229,
+      "sha256": "57aad9532604a082351ec1af0738ed33ea413a72d13f5831ac3cf1b70863b330",
+      "skipped": false
+    },
+    {
+      "name": "Exposed Hydropowers, GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Exposed Hydropowers, GeoJSON.geojson",
+      "bytes": 5359,
+      "sha256": "c2ebe0e24b131154ac14433ef63c924f4c6368d6fbd9a80e4b93eea2f7f85ecc",
+      "skipped": false
+    },
+    {
+      "name": "Financial Services (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Financial Services (OSM), GeoJSON.geojson",
+      "bytes": 5059,
+      "sha256": "9f20bb8ef10dd8f0570306560e2c112cc4aeb593b5f8ad70a164816a1c400d8a",
+      "skipped": false
+    },
+    {
+      "name": "Flood Extent, Observed 27 August 2026, GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Flood Extent, Observed 27 August 2026, GeoJSON.geojson",
+      "bytes": 47870,
+      "sha256": "e939c0c1502d7cfbf0e4f5bf99e1ceeca0db0cdef3026cbf74b395ced74e96b2",
+      "skipped": false
+    },
+    {
+      "name": "Health Facilities (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Health Facilities (OSM), GeoJSON.geojson",
+      "bytes": 4334,
+      "sha256": "c6c854260e71165794b5c629397c5be738de7336bc79958c41c291886dc2ba89",
+      "skipped": false
+    },
+    {
+      "name": "Health Facilities (Overture), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Health Facilities (Overture), GeoJSON.geojson",
+      "bytes": 4452,
+      "sha256": "fe5b98592d520eae88678abff0340dbd5c1268b8b266e8aafeb197ff1cde6307",
+      "skipped": false
+    },
+    {
+      "name": "Helipads (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Helipads (OSM), GeoJSON.geojson",
+      "bytes": 5746,
+      "sha256": "1e9fc9458bd04a778f750b9d30304a0145c113fdfcb55fb01d48134afc69edf6",
+      "skipped": false
+    },
+    {
+      "name": "Mapping Task Boundaries (Tasking Manager), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Mapping Task Boundaries (Tasking Manager), GeoJSON.geojson",
+      "bytes": 690049,
+      "sha256": "af825fd69eee7b4e1ddf6d62dfcc84caa1bcaa4234ba018eabc8d1b5f94bb098",
+      "skipped": false
+    },
+    {
+      "name": "Open Spaces (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Open Spaces (OSM), GeoJSON.geojson",
+      "bytes": 35011,
+      "sha256": "4c309ea23c55c535bef3a4476013f6df8c31053cd98d76dce6dd50513f4450fe",
+      "skipped": false
+    },
+    {
+      "name": "Points of Interest (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Points of Interest (OSM), GeoJSON.geojson",
+      "bytes": 33108,
+      "sha256": "6d389fa49edf681c5739e6f58ae9cc41569f85f4553eed4a7bba42582b2f027e",
+      "skipped": false
+    },
+    {
+      "name": "Points of Interest (Overture), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Points of Interest (Overture), GeoJSON.geojson",
+      "bytes": 24813,
+      "sha256": "0ba84067b86875c03f8f4fd409f24803f068a59cd48d0b5c01918f561ace2192",
+      "skipped": false
+    },
+    {
+      "name": "Police Stations (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Police Stations (OSM), GeoJSON.geojson",
+      "bytes": 4532,
+      "sha256": "51d1c283668059f24c34e453aff2fc27b8534bf4677200215fbf954c5f7554f6",
+      "skipped": false
+    },
+    {
+      "name": "Residential Areas (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Residential Areas (OSM), GeoJSON.geojson",
+      "bytes": 117890,
+      "sha256": "807328d428646763fea5c3ff0524d6287c2daba3c5bc21bd83c91d2e1ccaf33b",
+      "skipped": false
+    },
+    {
+      "name": "Settlement Names (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Settlement Names (OSM), GeoJSON.geojson",
+      "bytes": 11026,
+      "sha256": "233e29da58c95e09cf3c5141e677cfe1cf588fd37087ea0b299c19752c5eb067",
+      "skipped": false
+    },
+    {
+      "name": "Waterways (OSM), GeoJSON.geojson",
+      "path": "data/bronze/hot_flood_npl/Waterways (OSM), GeoJSON.geojson",
+      "bytes": 295624,
+      "sha256": "989236326787c29427fb271515cb0b6826195b424195853fa46d98ddc7b48094",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "hdx last modified: 2026-09-03T11:05:57.092994"
+  ],
+  "cannot_tell_you": [
+    "areas mappers had not yet reached at the time of extraction"
+  ]
+}

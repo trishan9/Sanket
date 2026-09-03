@@ -1,0 +1,604 @@
+{
+  "dataset": "chirps",
+  "source_org": "UCSB Climate Hazards Center, CHIRPS 2.0",
+  "license": "public domain (UCSB Climate Hazards Center)",
+  "access": "https://data.chc.ucsb.edu/products/CHIRPS-2.0/global_monthly/cogs, windowed COG clip to the corridor",
+  "independence_group": "chirps_precipitation",
+  "claim_type": "observation",
+  "bbox": [
+    85.1,
+    27.8,
+    85.45,
+    28.55
+  ],
+  "temporal": null,
+  "fetched_at": "2026-09-03T13:14:08.484914Z",
+  "files": [
+    {
+      "name": "chirps-v2.0.2006.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2006.06.tif",
+      "bytes": 806,
+      "sha256": "91ee6071efe69aef7d114bae7f2d4fa5f00f64b4d1eedc576b16a9da63cae8cf",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2006.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2006.07.tif",
+      "bytes": 799,
+      "sha256": "c96e30aedde24ba4bbbb1be904dfd89e3ae2caf6b076be17303423a05a2af611",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2006.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2006.08.tif",
+      "bytes": 795,
+      "sha256": "7e5e55cadd881ba8e3562dcc79fde94c16817d7041976b4c052270ed6af5d799",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2006.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2006.09.tif",
+      "bytes": 797,
+      "sha256": "78a4ce4aea3c5aa2033334d1f820a061f7e48238e2c7845fc06404bbd52ef066",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2007.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2007.06.tif",
+      "bytes": 798,
+      "sha256": "4426ac1059c097d2dae2a0ef93dab2b9b5025e87b3a9aa8a989d3fb2e81434cf",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2007.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2007.07.tif",
+      "bytes": 795,
+      "sha256": "f6a2056220f214d411cb2b738b38123466a8dde87d86d8f125bd830fbd0597bf",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2007.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2007.08.tif",
+      "bytes": 796,
+      "sha256": "1e98c53ec20e85b6d7deddc2b9ee819ada07b5141e2856eeffcbad88dae12dad",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2007.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2007.09.tif",
+      "bytes": 795,
+      "sha256": "a76044bef3866ca901abb133d76b9393a7240eb370a46bef0269b428842d8937",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2008.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2008.06.tif",
+      "bytes": 795,
+      "sha256": "330f2eb6f6b9f8df1fc264a0111a31700c0aba4fce52300fb10019063f33d295",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2008.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2008.07.tif",
+      "bytes": 797,
+      "sha256": "5b605ec5eeb2e8cff7a90ffb509f611c0c4fce9f5f49891fb49ae1fe44478204",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2008.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2008.08.tif",
+      "bytes": 797,
+      "sha256": "beb4810e6f8556821754c87602024d7038551eefa3af8103bbe962c3ee7295b4",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2008.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2008.09.tif",
+      "bytes": 793,
+      "sha256": "d3d871db4eafc31b2a49677daf3571748b50ae4498c3550b61256337562fcdfa",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2009.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2009.06.tif",
+      "bytes": 806,
+      "sha256": "43a7be22d85651b5c9628da7191b6a23d788db28c662dbe21526f687153edaa5",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2009.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2009.07.tif",
+      "bytes": 800,
+      "sha256": "943068aecf0bb44fa166683dbbc5a75a6eb4f216e7944bc9d25736646f1cea82",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2009.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2009.08.tif",
+      "bytes": 799,
+      "sha256": "af45059c05abe9df3a16161fd3c911dde9d94343d077eee1b75653a8a8eced65",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2009.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2009.09.tif",
+      "bytes": 808,
+      "sha256": "0de1a218fd63789bba9a8ed83bf4e39d9c1a24a3744c60596240238727c20bd8",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2010.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2010.06.tif",
+      "bytes": 809,
+      "sha256": "50d3efd9abdca6abafaa2e232610d03520b1cbf2a54b265f51b88ca0fd363db1",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2010.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2010.07.tif",
+      "bytes": 799,
+      "sha256": "a124cb2a74f241a36f59098e950202d3ad9988199e26f25eea2db43aa9e8fe2c",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2010.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2010.08.tif",
+      "bytes": 798,
+      "sha256": "1e2dc0fb11b61099b8b2c83e6810e8da3a05ae9f6e3c961be13a00537e0bb6f7",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2010.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2010.09.tif",
+      "bytes": 798,
+      "sha256": "0a51c45661b14bbd03a329f5a75898d5d65416992ed93b307603694c6ae018dc",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2011.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2011.06.tif",
+      "bytes": 799,
+      "sha256": "e47fea9e46ac7dd44aa14645b58565b1662f7bc85edefd86d0053ae4b4c9e40e",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2011.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2011.07.tif",
+      "bytes": 801,
+      "sha256": "492004824d5cb67732447dca8a6769ccb6131ae78e45cf94b1764f0fd7aea143",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2011.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2011.08.tif",
+      "bytes": 796,
+      "sha256": "045883c7734f1dccc49c90d88da6710a750706ca783b9b98029219d47c975d3a",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2011.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2011.09.tif",
+      "bytes": 797,
+      "sha256": "2edaea1ebfa870c7eb884d705495be954fa318e7475bd0e6f525431b63dfca0e",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2012.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2012.06.tif",
+      "bytes": 796,
+      "sha256": "7dfd5ea2c3966d275a04c636a3691fa74410e81981b967054ba1cfe6c8b1da7e",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2012.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2012.07.tif",
+      "bytes": 797,
+      "sha256": "cf06a0d58d8734d295b6fc9bfb250c43f9b3f41597ae7445b4ec53f5d9fe74bb",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2012.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2012.08.tif",
+      "bytes": 797,
+      "sha256": "b80adfdde1ef40a2a330e128e32eef9964fcb4439b5d7f1974d2fc8905802593",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2012.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2012.09.tif",
+      "bytes": 797,
+      "sha256": "401969b107895f48d427bfc0bfc5f92957ffc1a22c4379d618ef3a140473185b",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2013.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2013.06.tif",
+      "bytes": 795,
+      "sha256": "8e2201b9932c71e4f3862c64ae6318dc2fb0f5c501b6332460e469568dfa566e",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2013.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2013.07.tif",
+      "bytes": 793,
+      "sha256": "7ba13b935855af10fa330959327799654b46bc8fbbc3f504a8be0903c4b3779a",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2013.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2013.08.tif",
+      "bytes": 797,
+      "sha256": "dd091a0cca24aeaf5cf0631454cbda7eb3689b464adf5f7c44fa9f77ac8de6a4",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2013.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2013.09.tif",
+      "bytes": 805,
+      "sha256": "36179e0eb4c2c0b9827cdffff2a9b1e68bcaaaadd5c04542d9e91db4272b319c",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2014.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2014.06.tif",
+      "bytes": 799,
+      "sha256": "baf98043ec4fd7d70633b9c433ca289c789b7e49a1003123434bd61f8511412f",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2014.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2014.07.tif",
+      "bytes": 805,
+      "sha256": "8543a24e2fb291104c647638a850363f98489038f5b40efdc2dab500c7e8a5e2",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2014.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2014.08.tif",
+      "bytes": 797,
+      "sha256": "f7cefc2ba5423967a164b1a2db980a2c190642d85091d9606272aeecc6739a1e",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2014.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2014.09.tif",
+      "bytes": 803,
+      "sha256": "74dcbe1240e1cd7c011857aeb0f56f21e19a2b89b7fa0e88f872d49b757dae0c",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2015.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2015.06.tif",
+      "bytes": 799,
+      "sha256": "762d8cb10fbcbfbad24a8d68d5227e528a54032657a57eff2fb1b47c2ebaca0b",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2015.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2015.07.tif",
+      "bytes": 796,
+      "sha256": "e0391a3a8ac1bcbcae5749bd8a92eebb485a25318e42ba10e8bab9f670505819",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2015.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2015.08.tif",
+      "bytes": 799,
+      "sha256": "99a09894ecbc4fdbbb4a2d5c25de9eca4508b656d3aa97d0ad1f4a476740efc9",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2015.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2015.09.tif",
+      "bytes": 808,
+      "sha256": "b70b3de18254876a60f3d0669bdea079a451f34fc57178131a9bfd795ecf776f",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2016.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2016.06.tif",
+      "bytes": 799,
+      "sha256": "9bcda32bff9cb23f6625b5884fb5546c444273f9affe33d1dc69b202bd441148",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2016.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2016.07.tif",
+      "bytes": 803,
+      "sha256": "c5df0a8e6d800d4de4631fa7a31a24654717a0a408bed5c035bef93046ee44d0",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2016.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2016.08.tif",
+      "bytes": 798,
+      "sha256": "91a3d63344663669507577f6ef0c9ebf10b312f9bd927d1667b380a9d34041bd",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2016.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2016.09.tif",
+      "bytes": 806,
+      "sha256": "4de82ccad462e33a7436e036cf1e4f33277121a4d2e7f61e9796aa0fcd6b2c5d",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2017.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2017.06.tif",
+      "bytes": 808,
+      "sha256": "47c77b19af97cdec373b8b248c20dc0bb361616ef836b074425059e31e177f4d",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2017.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2017.07.tif",
+      "bytes": 796,
+      "sha256": "540415a49befa27444fc52efc4329429f6f7d7e29da1c99354e294668913f78c",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2017.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2017.08.tif",
+      "bytes": 795,
+      "sha256": "be5e477a6aebfe383e4f38a5015bbfebca08f0443a98a991c08c76fff6e18e32",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2017.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2017.09.tif",
+      "bytes": 804,
+      "sha256": "24a3fe50bd873210fa095e0f4cff00f025817a01e30f232a1fb96de6e670e51f",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2018.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2018.06.tif",
+      "bytes": 799,
+      "sha256": "ea2e3a177cfebc24d2bca78a8e8d5fb2aa11594a1a655a707d44a4eab63b8642",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2018.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2018.07.tif",
+      "bytes": 808,
+      "sha256": "8bebe22f20dfdc301df7efb3854b6ab5871f79f36369184ca91f405d842dedff",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2018.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2018.08.tif",
+      "bytes": 809,
+      "sha256": "6bcb2b62cef4d7d76108ad46388d05cb7013d31c57a9dc72b062c01d6a45fa3a",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2018.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2018.09.tif",
+      "bytes": 808,
+      "sha256": "b2b4d29d0419474d9ff5acab92901a7063449f99b9e53a222f399de5d8a60965",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2019.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2019.06.tif",
+      "bytes": 800,
+      "sha256": "5028e76c53623253bfbeb0517cd049a0d425ede5f64b4afabe8f2ecb85e324a0",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2019.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2019.07.tif",
+      "bytes": 799,
+      "sha256": "64e2e342d23ec0001305ce8b484d350e1a41207d1c007ce6d1df55f4e50e333f",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2019.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2019.08.tif",
+      "bytes": 794,
+      "sha256": "2e08ad130b3abbe1bd6e9c7d4a701268383ebbf02d80f57503c5073db097b00b",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2019.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2019.09.tif",
+      "bytes": 794,
+      "sha256": "dba2d356694f56e126734cb780e336d640c8109e393144e9b2a3282a167b55c6",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2020.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2020.06.tif",
+      "bytes": 799,
+      "sha256": "6c91f41167e8c38421198f8adeb4fa67fa13c8f2f7b76928d19305ebd0ef98fe",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2020.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2020.07.tif",
+      "bytes": 791,
+      "sha256": "d9cf45e6f26fae9840389f2ea71c618bc852b14197180584cc656f730887c826",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2020.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2020.08.tif",
+      "bytes": 797,
+      "sha256": "b0e2cc729a78c390ba478dbaa1838b6a7c0616837d81fc646bb2beb327e999c6",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2020.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2020.09.tif",
+      "bytes": 808,
+      "sha256": "94dfb4a2f06db002b0f5782832fa9ddb213129a833e5e63c703dc5d6aca5d534",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2021.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2021.06.tif",
+      "bytes": 800,
+      "sha256": "cbb774f1fa21bf4dc4085c204fb8a74f1bd506a97bc13f49306730444a28d7c5",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2021.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2021.07.tif",
+      "bytes": 808,
+      "sha256": "a17a9c54c97ded269e60ab596340e3c0aef0c4b6d40e1cba6699bd200a025402",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2021.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2021.08.tif",
+      "bytes": 794,
+      "sha256": "5e9b5c311aab33d0bc0210cd1f1990848dcc6200a1bb0a3e7035461f2eb6d5fa",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2021.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2021.09.tif",
+      "bytes": 798,
+      "sha256": "12426c6961c8afc4d0461c264989bba6aebe5d5bb83d5fb63fd77f3ac4a4c950",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2022.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2022.06.tif",
+      "bytes": 793,
+      "sha256": "3cd1d87cc8a2f64a2b2197386447e386f71b062d5e754bd121b474f266ce2084",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2022.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2022.07.tif",
+      "bytes": 797,
+      "sha256": "e2c5427cf45746c0443c384a6671dad2b298fab8a79b03281568aa868e4d1262",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2022.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2022.08.tif",
+      "bytes": 799,
+      "sha256": "7c575a41c7f3956796b9f29b9d413d0ddf0c28a92ed32fc96c26a8c24bab2f3d",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2022.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2022.09.tif",
+      "bytes": 803,
+      "sha256": "30dd7f236725b5f69d97edc323f5e11e66e83bc931c45db62f3f8f1205153add",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2023.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2023.06.tif",
+      "bytes": 809,
+      "sha256": "7807b154fd5b6a06e9bf5451ac826780069184ef2ab7ff3722993a92d2243f44",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2023.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2023.07.tif",
+      "bytes": 793,
+      "sha256": "b9f066ed44360c0ff49144d5d57a4ead8e7402c95bbb58ac6f78dd9bbddab866",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2023.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2023.08.tif",
+      "bytes": 797,
+      "sha256": "a23e548c14d729958cec2fd55428243febfacabc8534a6d7151155853a259d13",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2023.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2023.09.tif",
+      "bytes": 793,
+      "sha256": "3b1cd1946f5c10ad7954488e4b951044056543212b1a3e641bb4e978014795d0",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2024.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2024.06.tif",
+      "bytes": 797,
+      "sha256": "6512b5032e73f05e4fcfdc9d0c13fb9dbd356f6d191a045272d028e7b554b4b3",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2024.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2024.07.tif",
+      "bytes": 794,
+      "sha256": "0c8e06037e888d7150f9052070d59732685ab125269819512a47fa2e3c9940cf",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2024.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2024.08.tif",
+      "bytes": 795,
+      "sha256": "2786475248860286f2934bb9275aaa14c5dded9889605b102a2febb465963b3d",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2024.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2024.09.tif",
+      "bytes": 795,
+      "sha256": "02e9e17af09286cc87f53fb88252445c1195e6dae9f464deac1b61d4e49b7623",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2025.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2025.06.tif",
+      "bytes": 794,
+      "sha256": "364ae421acf83e9b5f9548d31f91fa2c06c37790bc6913722a0e2a42fdd7df58",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2025.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2025.07.tif",
+      "bytes": 796,
+      "sha256": "372a8a0c7dad4c05ae4a1c08245b08ac7cea1ee38b8f515d685a788d6343b45f",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2025.08.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2025.08.tif",
+      "bytes": 797,
+      "sha256": "7e26ef26382ba08e79150b002cdb3e6c2897dcd71f997daf21adb33db0fe7bf2",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2025.09.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2025.09.tif",
+      "bytes": 791,
+      "sha256": "9ad4a8e6f8b1f69c51679116438f6eebc289d832b4d1b8f0b17c6a67752dd9b7",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2026.06.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2026.06.tif",
+      "bytes": 798,
+      "sha256": "2a4a560cd584d9e6c6b17c6eebd8bb431dfb70a1e63ecd3709da029fd3000acd",
+      "skipped": false
+    },
+    {
+      "name": "chirps-v2.0.2026.07.tif",
+      "path": "data/bronze/chirps/chirps-v2.0.2026.07.tif",
+      "bytes": 797,
+      "sha256": "16640ec1ee82d0441512162dd6b69f06766964cccd0f93471965dc187c76640d",
+      "skipped": false
+    }
+  ],
+  "notes": [
+    "monthly 0.05 degree rainfall, clipped to the corridor",
+    "used for the percentile rule-out against a 20-year climatology",
+    "unavailable: 2026-08",
+    "unavailable: 2026-09"
+  ],
+  "cannot_tell_you": [
+    "sub-daily rainfall intensity",
+    "snowfall or snowmelt, which is what matters at these elevations",
+    "rainfall at a point - it is a gridded satellite-gauge blend",
+    "anything about a dry-day ice collapse, which is the point of the rule-out"
+  ]
+}
