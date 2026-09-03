@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Create environment
+        run: |
+          uv venv --python 3.12 .venv
+          . .venv/bin/activate
+          uv pip install -e ".[dev]"
+      - name: Ruff
+        run: . .venv/bin/activate && ruff check core analysis agent watch actions api tests
+      - name: Mypy strict
+        run: . .venv/bin/activate && mypy
+      - name: Import boundaries
+        run: . .venv/bin/activate && lint-imports
+      - name: Tests
+        run: . .venv/bin/activate && pytest -q -m "not network and not credentials and not slow"
+
+  board:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: board
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: npm install
+      - run: npx tsc --noEmit
+      - run: npx next build
