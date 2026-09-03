@@ -1,0 +1,28 @@
+id: hmaglofdb
+source_org: Shrestha, Steiner et al. 2023, ESSD 15:3941
+access:
+  kind: github
+  dataset: hmaglofdb
+  refresh: static
+  checksum: sha256
+license: CC-BY-4.0
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: tabular
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: medium
+good_for:
+- historical base rates of GLOF frequency and fatality by lake type and country
+cannot_tell_you:
+- events that were never reported - the record is documentary, not exhaustive
+- whether GLOF frequency is increasing; the authors describe the evidence as ambiguous
+- anything about lakes with no recorded outburst
+independence_group: hmaglofdb_record

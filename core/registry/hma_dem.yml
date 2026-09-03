@@ -1,0 +1,29 @@
+id: hma_dem
+source_org: NASA NSIDC
+access:
+  kind: earthaccess
+  dataset: hma_dem
+  refresh: static
+  checksum: sha256
+license: public domain (NASA)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: 8 m
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: high
+good_for:
+- stage-volume curves at any blockage point
+- flood routing
+- 3D terrain rendering
+cannot_tell_you:
+- post-event terrain - the channel has been reshaped by an enormous volume of debris
+- anything about the barrier lake's current state; this is pre-event terrain only
+independence_group: hma_dem_terrain
