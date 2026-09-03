@@ -1,0 +1,119 @@
+[project]
+name = "sanket"
+version = "0.1.0"
+description = "SANKET - national glacial-hazard standing watch for Nepal"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+  "litellm==1.99.0",
+  "smolagents==1.26.0",
+  "chromadb==1.5.9",
+  "sentence-transformers==6.0.1",
+  "apscheduler==3.11.3",
+  "structlog==26.1.0",
+  "pydantic==2.13.5",
+  "pydantic-settings==2.15.0",
+  "flask==3.1.3",
+  "gunicorn==26.2.0",
+  "gevent==26.8.0",
+  "twilio==9.11.0",
+  "mcp==2.1.1",
+  "duckdb==1.5.5",
+  "earthaccess==0.18.0",
+  "rasterio==1.5.1",
+  "rioxarray==0.23.0",
+  "xarray==2026.7.0",
+  "geopandas==1.1.4",
+  "shapely==2.1.2",
+  "pyproj==3.7.2",
+  "pysheds==0.5",
+  "whitebox==2.3.6",
+  "pystac-client==0.9.0",
+  "odc-stac==0.5.3",
+  "rio-cogeo==7.0.2",
+  "rio-rgbify==0.4.0",
+  "titiler-core==2.2.1",
+  "omnicloudmask==1.7.1",
+  "omniwatermask==0.6.2",
+  "geolibre==2.9.0",
+  "numpy==2.5.2",
+  "scipy==1.18.1",
+  "pyyaml==6.0.3",
+  "httpx==0.28.1",
+  "tenacity==9.1.2",
+  "python-dotenv==1.2.1",
+]
+
+[project.optional-dependencies]
+dev = ["ruff==0.15.1","black==26.1.0","mypy==1.19.1","pytest==9.1.0","pytest-cov==8.0.0","import-linter==2.6","pre-commit==4.4.0","types-PyYAML","types-requests"]
+torch = ["torch==2.14.0"]
+
+[project.scripts]
+sanket = "watch.daemon:main"
+sanket-mcp = "sanket_mcp.server:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["core","analysis","agent","watch","actions","api","sanket_mcp"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+exclude = ["forked", "notebooks", ".venv", "board"]
+
+[tool.ruff.lint]
+select = ["E","F","W","I","N","UP","B","A","C4","SIM","ARG","PTH","RET","TID","ERA","ANN"]
+ignore = ["ANN401","B008"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["ANN","ARG"]
+
+[tool.black]
+line-length = 100
+target-version = ["py312"]
+extend-exclude = "forked|board|\\.venv"
+
+[tool.mypy]
+python_version = "3.12"
+strict = true
+files = ["core","analysis"]
+exclude = "(forked|board|\\.venv|notebooks)"
+ignore_missing_imports = true
+
+[[tool.mypy.overrides]]
+module = "analysis.hydro.rasterize"
+disallow_untyped_calls = false
+
+[[tool.mypy.overrides]]
+module = "analysis.eo.mndwi"
+disallow_untyped_calls = false
+
+[[tool.mypy.overrides]]
+module = "agent.rag.*"
+ignore_errors = true
+
+[[tool.mypy.overrides]]
+module = "agent.sandbox"
+ignore_errors = true
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q --strict-markers"
+markers = ["network: requires network access","credentials: requires API credentials","slow: slow test"]
+
+[tool.importlinter]
+root_packages = ["core","analysis","agent","watch","actions","api"]
+include_external_packages = true
+
+[[tool.importlinter.contracts]]
+name = "Dependency direction is one-way"
+type = "layers"
+layers = ["api","watch","actions","agent","analysis","core"]
+
+[[tool.importlinter.contracts]]
+name = "Only agent.router may import a provider SDK"
+type = "forbidden"
+source_modules = ["core","analysis","agent.budget","agent.cache","agent.trace","agent.tools","agent.rag"]
+forbidden_modules = ["litellm","openai","groq","anthropic"]
