@@ -1,0 +1,29 @@
+id: chirps_daily_prelim
+source_org: UCSB Climate Hazards Center, CHIRPS 2.0
+access:
+  kind: http
+  dataset: chirps_daily_prelim
+  refresh: daily
+  checksum: sha256
+license: public domain (UCSB Climate Hazards Center)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: ~5.5 km
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: low
+good_for:
+- day-specific rainfall rule-out around a specific event date
+cannot_tell_you:
+- sub-daily intensity
+- snowfall or snowmelt at these elevations
+- a point measurement - it is a 0.05 degree gridded blend
+- final values, which may revise once gauge data is incorporated
+independence_group: chirps_precipitation

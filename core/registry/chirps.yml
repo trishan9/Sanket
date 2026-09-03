@@ -1,0 +1,29 @@
+id: chirps
+source_org: UCSB Climate Hazards Center, CHIRPS 2.0
+access:
+  kind: http
+  dataset: chirps
+  refresh: monthly
+  checksum: sha256
+license: public domain (UCSB Climate Hazards Center)
+spatial:
+  crs: EPSG:4326
+  extent:
+  - 85.1
+  - 27.8
+  - 85.45
+  - 28.55
+  resolution: ~5.5 km
+temporal:
+  observed: null
+  published: '2026-09-03'
+claim_type: observation
+confidence_tier: medium
+good_for:
+- 20-year rainfall climatology for the seasonal percentile
+cannot_tell_you:
+- sub-daily rainfall intensity
+- snowfall or snowmelt, which is what matters at these elevations
+- rainfall at a point - it is a gridded satellite-gauge blend
+- anything about a dry-day ice collapse, which is the point of the rule-out
+independence_group: chirps_precipitation
