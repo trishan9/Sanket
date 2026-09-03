@@ -1,0 +1,25 @@
+id: cems_emsr927
+source_org: Copernicus Emergency Management Service
+access:
+  kind: manual
+  dataset: cems_emsr927
+  refresh: static
+  checksum: sha256
+license: Copernicus EMS licence (free and open, attribution required)
+spatial:
+  crs: EPSG:4326
+  extent: [84.941, 27.793, 85.381, 28.280]
+  resolution: vector, VHR-derived
+temporal:
+  observed: 2026-08-27
+  published: 2026-08-29
+claim_type: observation
+confidence_tier: high
+good_for:
+  - validating a modelled inundation or disturbance footprint against an official rapid-mapping product
+  - locating the 4 AOIs Copernicus activated along this corridor
+cannot_tell_you:
+  - flood depth or discharge - it is an extent and classification product
+  - anything outside the 4 activated AOIs
+  - the exact hazard mechanism - it classifies this event as 6-Mass Movement/Landslide, not flood, which is itself a finding worth carrying forward
+independence_group: cems_emsr927
