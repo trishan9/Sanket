@@ -1,5 +1,4 @@
 # SANKET — Progress
-<!-- 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 -->
 
 **Last updated:** 4 September 2026 · **Current phase:** Phase 7 complete; Phase 8 (Investigator and Verifier) next
 **Phases complete:** 8 / 15
