@@ -195,11 +195,13 @@ def verify_claim(
         outcome = "vetoed" if veto_reason else "passed"
         trace.verify(
             f"{outcome} ({confidence}): {claim.statement}",
-            independence=independence.detail,
-            temporal=temporal.detail,
-            licensing=licensing.detail,
-            contradiction=contradiction.detail,
-            veto_reason=veto_reason,
+            extra={
+                "independence": independence.detail,
+                "temporal": temporal.detail,
+                "licensing": licensing.detail,
+                "contradiction": contradiction.detail,
+                "veto_reason": veto_reason,
+            },
         )
 
     return ClaimVerification(

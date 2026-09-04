@@ -198,10 +198,12 @@ def _propose_claim(
     trace.step(
         step,
         f"proposed claim ({claim.confidence}): {claim.statement}",
-        claim_type=claim.claim_type,
-        supporting=[ref.ref for ref in claim.supporting],
-        contradicting=[ref.ref for ref in claim.contradicting],
-        vetoed=claim.vetoed,
+        extra={
+            "claim_type": claim.claim_type,
+            "supporting": [ref.ref for ref in claim.supporting],
+            "contradicting": [ref.ref for ref in claim.contradicting],
+            "vetoed": claim.vetoed,
+        },
     )
     return (
         json.dumps(
@@ -294,6 +296,14 @@ def _run_step(
     return _run_calls(step, calls, messages, ctx, ledger, trace)
 
 
+def _schemas_for(tool_names: tuple[str, ...] | None) -> list[dict[str, Any]]:
+    if tool_names is None:
+        return ALL_SCHEMAS + CONTROL_SCHEMAS
+    allowed = set(tool_names)
+    selected = [s for s in ALL_SCHEMAS if s["function"]["name"] in allowed]
+    return selected + CONTROL_SCHEMAS
+
+
 def investigate(
     corridor: Corridor,
     anomaly_id: str,
@@ -306,16 +316,16 @@ def investigate(
     max_steps: int = MAX_STEPS,
     tool_names: tuple[str, ...] | None = None,
     system_prompt: str | None = None,
+    deterministic: bool = False,
 ) -> Ledger:
     target = store or default_state
     effective_as_of = as_of or _current_as_of(corridor)
     ledger = Ledger(run_id, effective_as_of)
     ctx = ToolContext(run_id, effective_as_of, target)
-    selected = ALL_SCHEMAS
-    if tool_names is not None:
-        allowed = set(tool_names)
-        selected = [s for s in ALL_SCHEMAS if s["function"]["name"] in allowed]
-    schemas = selected + CONTROL_SCHEMAS
+    if deterministic:
+        run_deterministic_investigation(corridor, feature_id, ctx, ledger, trace)
+        return ledger
+    schemas = _schemas_for(tool_names)
     messages: list[dict[str, Any]] = [
         {"role": "system", "content": system_prompt or INVESTIGATOR_SYSTEM_PROMPT},
         {"role": "user", "content": _goal_prompt(corridor, feature_id, anomaly_id, trigger)},
