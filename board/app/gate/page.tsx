@@ -1,10 +1,19 @@
 "use client";
 
-import { Inbox, PlayCircle, ShieldCheck, Timer } from "lucide-react";
+import { Inbox, MessageSquare, PlayCircle, ShieldCheck, Timer, Zap } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { GateCard } from "@/components/gate/GateCard";
 import { Hero, Section, StatCard, StatRow } from "@/components/shell/Hero";
-import { fetchDrill, fetchGateQueue, startDrill, type DrillState, type GateQueue } from "@/lib/control";
+import {
+  cardSrc,
+  fetchDrill,
+  fetchGateQueue,
+  sendDrillAlert,
+  startDrill,
+  type DrillAlert,
+  type DrillState,
+  type GateQueue,
+} from "@/lib/control";
 
 const STAGES = [
   { key: "scout", label: "Scout sweeps 8 basins", detail: "tier scoring, no model call" },
@@ -18,6 +27,8 @@ const STAGES = [
 export default function GatePage() {
   const [queue, setQueue] = useState<GateQueue | null>(null);
   const [drill, setDrill] = useState<DrillState | null>(null);
+  const [alert, setAlert] = useState<DrillAlert | null>(null);
+  const [sending, setSending] = useState(false);
   const timer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const refresh = useCallback(() => {
@@ -68,13 +79,22 @@ export default function GatePage() {
           note="Replays the real Lhende barrier case through Scout, Watcher, Investigator, Verifier, Explainer and Actor. Every alert it produces is stamped REPLAY - TEST."
         >
           <div className="p-5">
-            <button
-              onClick={() => void startDrill().then(setDrill)}
-              disabled={running}
-              className="btn btn-primary disabled:opacity-50"
-            >
-              <PlayCircle size={15} /> {running ? "Chain running" : "Start replay drill"}
-            </button>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => void startDrill(false).then(setDrill)}
+                disabled={running}
+                className="btn btn-primary disabled:opacity-50"
+              >
+                <PlayCircle size={15} /> {running ? "Chain running" : "Full chain, agent picks tools"}
+              </button>
+              <button
+                onClick={() => void startDrill(true).then(setDrill)}
+                disabled={running}
+                className="btn disabled:opacity-50"
+              >
+                <Zap size={15} /> Fast chain, no model
+              </button>
+            </div>
 
             {drill ? (
               <div className="mt-4 rounded-md border bg-sunken p-3 text-[12px]">
@@ -136,6 +156,78 @@ export default function GatePage() {
             </p>
           </div>
         </Section>
+      </div>
+
+      <div className="mt-4">
+      <Section
+        eyebrow="Channel test"
+        title="Push a live drill alert to the approver's phone"
+        note="Renders the real portrait card over the modelled flood path and sends it over Twilio WhatsApp in about five seconds. Every card is stamped REPLAY - TEST."
+      >
+        <div className="p-5">
+          <div className="flex flex-wrap items-center gap-2">
+            {(["ORANGE", "RED"] as const).map((level) => (
+              <button
+                key={level}
+                onClick={() => {
+                  setSending(true);
+                  void sendDrillAlert("Timure", level).then((outcome) => {
+                    setAlert(outcome);
+                    setSending(false);
+                  });
+                }}
+                disabled={sending}
+                className={`btn disabled:opacity-50 ${
+                  level === "RED" ? "bg-level-red text-white" : "bg-level-orange text-white"
+                }`}
+              >
+                <MessageSquare size={15} /> Send {level} to Timure
+              </button>
+            ))}
+            {sending ? <span className="text-[12px] text-ink-muted">rendering and sending</span> : null}
+          </div>
+
+          {alert ? (
+            <div className="mt-4 grid gap-4 sm:grid-cols-[168px_1fr]">
+              {cardSrc(alert.image_url ?? null) ? (
+                <img
+                  src={cardSrc(alert.image_url ?? null) as string}
+                  alt="Alert card just sent"
+                  className="w-full rounded-md border"
+                />
+              ) : null}
+              <div className="text-[12.5px]">
+                {alert.error ? (
+                  <p className="text-level-red">{alert.error}</p>
+                ) : (
+                  <dl className="space-y-1">
+                    <div className="flex justify-between gap-4 border-b py-1">
+                      <dt className="text-ink-muted">Level</dt>
+                      <dd className="font-medium">{alert.level}</dd>
+                    </div>
+                    <div className="flex justify-between gap-4 border-b py-1">
+                      <dt className="text-ink-muted">Estimated arrival</dt>
+                      <dd className="font-mono">{alert.lead_time_minutes ?? "n/a"} min</dd>
+                    </div>
+                    <div className="flex justify-between gap-4 border-b py-1">
+                      <dt className="text-ink-muted">Delivered to</dt>
+                      <dd className="font-mono text-[11.5px]">{alert.contact}</dd>
+                    </div>
+                    <div className="flex justify-between gap-4 border-b py-1">
+                      <dt className="text-ink-muted">Twilio status</dt>
+                      <dd className="font-medium">{alert.delivery_status}</dd>
+                    </div>
+                    <div className="flex justify-between gap-4 py-1">
+                      <dt className="text-ink-muted">Message SID</dt>
+                      <dd className="font-mono text-[11px]">{alert.message_sid}</dd>
+                    </div>
+                  </dl>
+                )}
+              </div>
+            </div>
+          ) : null}
+        </div>
+      </Section>
       </div>
 
       <div className="mt-4 space-y-4">

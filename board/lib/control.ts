@@ -82,12 +82,43 @@ export function fetchDrill(id: string): Promise<DrillState | null> {
   return getJson<DrillState>(`/api/drill/${id}`);
 }
 
-export async function startDrill(): Promise<DrillState | null> {
+export async function startDrill(instant = false): Promise<DrillState | null> {
   try {
-    const response = await fetch(`${BASE}/api/drill`, { method: "POST", cache: "no-store" });
+    const response = await fetch(`${BASE}/api/drill`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ instant }),
+      cache: "no-store",
+    });
     return (await response.json()) as DrillState;
   } catch {
     return null;
+  }
+}
+
+export interface DrillAlert {
+  run_id?: string;
+  settlement?: string;
+  level?: string;
+  lead_time_minutes?: number | null;
+  image_url?: string;
+  delivery_status?: string;
+  message_sid?: string;
+  contact?: string;
+  error?: string | null;
+}
+
+export async function sendDrillAlert(settlement: string, level: string): Promise<DrillAlert> {
+  try {
+    const response = await fetch(`${BASE}/api/drill/alert`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ settlement, level }),
+      cache: "no-store",
+    });
+    return (await response.json()) as DrillAlert;
+  } catch (error) {
+    return { error: String(error) };
   }
 }
 
