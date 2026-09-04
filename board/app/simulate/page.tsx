@@ -9,6 +9,7 @@ import { PredictionLive } from "@/components/sim/PredictionLive";
 import { fetchCascade, fetchDamage, type CascadePayload, type DamagePayload } from "@/lib/risk";
 import { fetchHazard, type HazardPayload } from "@/lib/predict";
 import { fetchTrace } from "@/lib/api";
+import { cardSrc, sendDrillAlert, type DrillAlert } from "@/lib/control";
 import type { TraceLine } from "@/lib/types";
 
 const VOLUMES = [0.5, 1.0, 1.5, 2.0, 2.5, 3.0, 4.0, 5.0];
@@ -30,6 +31,9 @@ export default function SimulatePage() {
   const [lines, setLines] = useState<TraceLine[]>([]);
   const [running, setRunning] = useState(false);
   const [ranAt, setRanAt] = useState<string | null>(null);
+  const [notify, setNotify] = useState(true);
+  const [settlement, setSettlement] = useState("Timure");
+  const [alert, setAlert] = useState<DrillAlert | null>(null);
 
   useEffect(() => {
     void fetchTrace("phase13_both_down_demo").then((payload) => setLines(payload?.lines ?? []));
@@ -56,6 +60,10 @@ export default function SimulatePage() {
     setDamage(cost);
     setHazard(probability);
     setRanAt(new Date().toLocaleTimeString());
+    if (notify) {
+      const level = (probability?.posterior_probability ?? 0) >= 0.6 ? "RED" : "ORANGE";
+      setAlert(await sendDrillAlert(settlement, level));
+    }
     setRunning(false);
   };
 
@@ -70,6 +78,26 @@ export default function SimulatePage() {
             {ranAt ? (
               <span className="chip chip-scenario">SCENARIO · {ranAt}</span>
             ) : null}
+            <label className="flex items-center gap-1.5 text-[12px] text-ink-muted">
+              <input
+                type="checkbox"
+                checked={notify}
+                onChange={(event) => setNotify(event.target.checked)}
+                className="h-3.5 w-3.5"
+              />
+              send to WhatsApp
+            </label>
+            <select
+              value={settlement}
+              onChange={(event) => setSettlement(event.target.value)}
+              className="field text-[12px]"
+            >
+              {["Timure", "Syapru Besi", "Dhunche", "Betrawati", "Trishuli Bazaar"].map((name) => (
+                <option key={name} value={name}>
+                  {name}
+                </option>
+              ))}
+            </select>
             <button onClick={() => void run()} disabled={running} className="btn btn-primary">
               {running ? "Running…" : `Run ${volume.toFixed(1)} Mm³ / ${duration} min`}
             </button>
@@ -80,6 +108,57 @@ export default function SimulatePage() {
       <div className="mb-4">
         <PredictionLive />
       </div>
+
+      {alert ? (
+        <section className="card mb-4">
+          <div className="card-head">
+            <div>
+              <div className="label">Sent from this run</div>
+              <div className="mt-0.5 text-[15px] font-semibold tracking-[-0.01em]">
+                {alert.level} for {alert.settlement}, delivered over WhatsApp
+              </div>
+            </div>
+            <span className="chip">{alert.delivery_status ?? "error"}</span>
+          </div>
+          <div className="grid gap-4 p-4 sm:grid-cols-[150px_1fr]">
+            {cardSrc(alert.image_url ?? null) ? (
+              <img
+                src={cardSrc(alert.image_url ?? null) as string}
+                alt={`Alert card for ${alert.settlement}`}
+                className="w-full rounded-md border"
+              />
+            ) : null}
+            <dl className="text-[12.5px]">
+              {alert.error ? (
+                <p className="text-level-red">{alert.error}</p>
+              ) : (
+                <>
+                  <div className="flex justify-between gap-4 border-b py-1">
+                    <dt className="text-ink-muted">Estimated arrival</dt>
+                    <dd className="font-mono">{alert.lead_time_minutes ?? "n/a"} min</dd>
+                  </div>
+                  <div className="flex justify-between gap-4 border-b py-1">
+                    <dt className="text-ink-muted">Delivered to</dt>
+                    <dd className="font-mono text-[11.5px]">{alert.contact}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4 border-b py-1">
+                    <dt className="text-ink-muted">Twilio message SID</dt>
+                    <dd className="font-mono text-[11px]">{alert.message_sid}</dd>
+                  </div>
+                  <div className="flex justify-between gap-4 py-1">
+                    <dt className="text-ink-muted">Run</dt>
+                    <dd className="font-mono text-[11px]">{alert.run_id}</dd>
+                  </div>
+                </>
+              )}
+            </dl>
+          </div>
+          <div className="card-note">
+            Card stamped REPLAY - TEST. The map is the modelled flood path for this corridor over
+            the real river network, with the arrival estimate for {alert.settlement}.
+          </div>
+        </section>
+      ) : null}
 
       <StatRow>
         <StatCard
