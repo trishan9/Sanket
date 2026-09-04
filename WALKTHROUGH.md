@@ -219,68 +219,96 @@ The routing under-predicts by 83 percent against observed extent.
 
 ---
 
-## Part 4 — The commercial answer
+## Part 4 — Selling it, in simple words
 
-If a judge asks what you would sell, **do not say "the software"**. Villagers cannot pay, and a
-one-off licence to a ministry rots within a year because nobody maintains it.
+### The one-line answer
 
-### The answer
+> **"We don't sell the software. We sell the watching."**
 
-> "We would not sell the software. We would sell a **monitored corridor**: a per-corridor annual
-> subscription covering the data pipeline, the compute, the model updates and an on-call
-> guarantee. The public alerts are free forever and always will be. The people who pay are the
-> people with assets in the flood path."
+A ministry that buys software has to maintain it, and it rots in a year. A hydropower company
+that buys *a service that watches their valley* renews it every year, because the risk does not
+go away.
 
-### Who actually pays, in order of how real the money is
+**And the alert to a villager is always free. Never charge for that.**
 
-**1. Hydropower operators — the anchor customer.**
-This is where the commercial case is hardest. Our own corridor cells show **252 MW of exposed
-hydropower**. A single outburst destroys intake structures, penstocks and years of revenue. An
-operator already spends real money on insurance and downtime. Selling them corridor monitoring
-with a machine-readable feed into their SCADA is a straightforward return-on-investment
-conversation, not a public-good appeal.
+### Why they pay: the loss is enormous, the fee is not
 
-**2. The state, donor-funded.**
-DHM and NDRRMA are the operational owners, but they will not fund it from core budget. The
-route is a World Bank, ADB, UNDP or Green Climate Fund resilience programme, where early
-warning is already a funded line item. Price per corridor per year, scaling as corridors are
-added.
+The August event, in this one corridor, using the replacement costs already in our code:
 
-**3. Insurance and reinsurance.**
-The exposure model, the scenario grid and the historical base rates are exactly the inputs a
-reinsurer needs to price Himalayan flood risk. That is a data product, not an alerting product,
-and it carries a very different margin.
+| What was lost | Cost |
+|---|---|
+| 726 buildings destroyed or badly damaged | NPR 65 – 174 crore |
+| 39 bridges washed out | NPR 136 – 468 crore |
+| **Total direct asset damage** | **NPR 202 – 642 crore** |
 
-**4. Infrastructure planning.**
-Road and bridge authorities siting new assets need the same routing and exposure layers.
+That is roughly **USD 14 to 46 million**, in one valley, in one night.
 
-### Why not the alternatives
+Now the other side. Running the system costs almost nothing. Our most expensive full agent run
+was **NPR 0.73**. Even at ten deep runs a day, that is **NPR 2,664 a year** in compute. The
+detection tier costs zero because it calls no model at all.
 
-- **Per-seat SaaS:** wrong shape entirely. The end users are villagers who pay nothing, and the
-  operator count is a handful of district officers.
-- **API metering:** the value is not in API calls. Our most expensive full agent run cost
-  **NPR 0.73**. Metering that is not a business.
-- **MCP server / API:** these are **distribution channels, not the product**. The MCP server
-  means another agent can query the corridor tools; that widens reach and it is a good answer to
-  "how does this integrate", but nobody buys an MCP endpoint.
+**So the real cost is people, not machines.** One engineer on call, data agreements, and
+keeping the pipeline alive.
 
-### The line to close on
+### The price list
 
-> "The marginal cost of watching one more valley is almost nothing — a full agent run costs
-> under one rupee. The cost is people, data agreements and the on-call promise. So the business
-> is a service contract with the people who own assets in the flood path, and the warning itself
-> stays free, because a warning someone has to pay for is not a warning."
+Not validated with a customer yet, so say that. But this is the shape:
 
-### If pushed on numbers
+| Who | What they get | Per year |
+|---|---|---|
+| **Hydropower operator** (one plant) | Corridor watch, machine feed into their control room, on-call | **NPR 15 – 40 lakh** |
+| **District or province** (one corridor) | Full system, alert delivery, officer training, gate integration | **NPR 40 – 80 lakh** |
+| **National** (all 8 basins) | Everything, plus a second on-call engineer | **NPR 3 – 5 crore** |
+| **Insurer or reinsurer** | Exposure model and scenario grid as a data licence, no alerting | **NPR 20 – 50 lakh** |
 
-Be honest that pricing is not validated. The defensible framing is comparative:
+### Why these numbers are defensible
 
-> "We have not tested pricing. But the reference point is what one outburst costs. In this
-> corridor the August event destroyed 677 buildings and washed out 39 bridges. Annual monitoring
-> priced anywhere below the cost of a single bridge replacement is trivially justified, and we
-> would start there and let procurement argue it down."
+- **NPR 25 lakh a year to a hydropower operator** is roughly one senior engineer's salary. For a
+  plant worth billions, sitting below **252 MW of exposed capacity** in this corridor alone, that
+  is a rounding error against one week of lost generation.
+- **NPR 60 lakh a year for a district** is less than **one fifth of one bridge**. Thirty-nine
+  bridges went in a night here. If it prevents a single bridge loss once a decade it has paid for
+  itself many times.
+- **NPR 4 crore for the nation** is about **USD 285,000**. That is an ordinary line item in a
+  World Bank, ADB or Green Climate Fund resilience programme. It is not a big ask in that room.
 
----
+### Who pays first, in order of how real the money is
+
+**1. Hydropower operators.** This is the anchor. They have assets in the water, they already pay
+for insurance and downtime, and the conversation is a simple return on investment. Start here.
+
+**2. Government, funded by donors.** DHM and NDRRMA are the operational owners, but the money
+comes from a donor resilience programme, not core budget. Sell the corridor, let the donor pay.
+
+**3. Insurance and reinsurance.** They need exposure numbers and base rates to price Himalayan
+flood risk. That is a data licence, higher margin, no on-call burden.
+
+**4. Road and bridge authorities.** Same routing and exposure layers, used for siting new
+assets rather than for warning.
+
+### Why not the other models
+
+- **Sell it once as software.** No. Nobody maintains it, and in a year it is dead.
+- **Per user, like normal SaaS.** No. The users are villagers who pay nothing, and there are
+  only a handful of district officers.
+- **Charge per API call.** No. A full run costs NPR 0.73. There is no business in metering that.
+- **Sell the MCP server or the API.** These are **ways to deliver, not things to sell**. It is a
+  good answer to "how does this integrate with what we already run", but nobody writes a cheque
+  for an endpoint.
+
+### If they push on the price
+
+> "We have not tested pricing with a customer, so treat these as a starting point. But the anchor
+> is simple: one bridge in this corridor costs NPR 3.5 to 12 crore to replace, and thirty-nine
+> went in one night. Anything we charge below the price of a single bridge is easy to justify,
+> and procurement will negotiate us down from there."
+
+### The closing line
+
+> "Watching one more valley costs us under a rupee a run. What costs money is people and the
+> promise to answer the phone at 3 a.m. So we sell a service contract to the people who own
+> things in the flood path, and the warning to the family living there stays free — because a
+> warning you have to pay for is not a warning."
 
 ## Part 5 — The questions that come up most
 
