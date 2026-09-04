@@ -9,6 +9,7 @@ from flask import jsonify, request
 
 from actions import gate as gate_module
 from actions import whatsapp
+from core.config import settings
 from core.contacts import approver
 from core.corridor import load_all_corridors
 from core.errors import ConfigError, GateNotApprovedError, UnauthorisedApproverError
@@ -118,19 +119,109 @@ def gate_decision(run_id: str) -> Any:
     )
 
 
+DRILL_LIVE_CORRIDOR = "bhotekoshi"
+DRILL_LEVELS: tuple[str, ...] = ("ORANGE", "RED")
+
+
+def _lead_time_for(corridor_key: str, settlement: str) -> float | None:
+    from analysis.exposure.preparedness import build_all_profiles
+    from api.preparedness import _load_chainages
+
+    corridor = load_all_corridors()[corridor_key]
+    chainages = _load_chainages(corridor.basin_id)
+    if not chainages:
+        return None
+    for profile in build_all_profiles(corridor, chainages, as_of=datetime.now(UTC).date()):
+        if profile.settlement == settlement:
+            return profile.minimum_lead_time_minutes
+    return None
+
+
+def drill_alert() -> Any:
+    from actions.alertcard import render_alert_card
+    from actions.channels.twilio_whatsapp import TwilioWhatsApp
+    from actions.levels import RISK_ENGLISH_ACTION, RISK_NEPALI_ACTION, coerce_level
+
+    body = request.get_json(silent=True) or {}
+    settlement = str(body.get("settlement", "Timure")).strip()
+    raw_level = str(body.get("level", "RED")).strip().upper()
+    if raw_level not in DRILL_LEVELS:
+        return jsonify({"error": f"level must be one of {list(DRILL_LEVELS)}"}), 400
+    try:
+        registered = approver().contact
+    except ConfigError as exc:
+        return jsonify({"error": str(exc)}), 503
+
+    corridor = load_all_corridors()[DRILL_LIVE_CORRIDOR]
+    if settlement not in corridor.settlement_names:
+        return jsonify({"error": f"unknown settlement {settlement}"}), 400
+
+    level = coerce_level(raw_level)
+    run_id = f"drill_alert_{uuid.uuid4().hex[:8]}"
+    lead = _lead_time_for(DRILL_LIVE_CORRIDOR, settlement)
+    card = render_alert_card(
+        corridor, settlement, level, run_id, lead_time_minutes=lead, replay=True
+    )
+    image_url = f"{settings.public_base_url.rstrip('/')}/alertcards/{card.path.name}"
+    lead_line = f"Estimated arrival {lead:.0f} min." if lead is not None else ""
+    text = (
+        f"[DRILL - NOT A REAL ALERT] SANKET {level} for {settlement}. {lead_line} "
+        f"{RISK_ENGLISH_ACTION[level]} {RISK_NEPALI_ACTION[level]} "
+        f"Channel and map render test, run {run_id}."
+    )
+    result = TwilioWhatsApp().send_media(registered, text, image_url)
+    gate_module.record_notification(
+        "drill", "whatsapp", registered, run_id, result.status,
+        store=default_state, message_sid=result.message_sid or None,
+    )
+    return _drill_alert_payload(
+        run_id, settlement, level, lead, image_url, card, result, registered
+    )
+
+
+def _drill_alert_payload(
+    run_id: str,
+    settlement: str,
+    level: str,
+    lead: float | None,
+    image_url: str,
+    card: Any,
+    result: Any,
+    registered: str,
+) -> Any:
+    return jsonify(
+        {
+            "run_id": run_id,
+            "settlement": settlement,
+            "level": level,
+            "lead_time_minutes": lead,
+            "image_url": image_url,
+            "card_file": card.path.name,
+            "delivery_status": result.status,
+            "message_sid": result.message_sid,
+            "error": result.error,
+            "contact": registered,
+        }
+    )
+
+
 def _record_drill(drill_id: str, **fields: Any) -> None:
     with _drill_lock:
         _drills[drill_id].update(fields)
 
 
-def _execute_drill(drill_id: str, prefix: str) -> None:
+def _execute_drill(drill_id: str, prefix: str, instant: bool) -> None:
     from watch.replay import run_replay
 
     started = datetime.now(UTC)
     try:
         corridor = load_all_corridors()[DRILL_CORRIDOR]
         summary = run_replay(
-            corridor, prefix, store=default_state, tick_real_seconds=DRILL_TICK_SECONDS
+            corridor,
+            prefix,
+            store=default_state,
+            tick_real_seconds=DRILL_TICK_SECONDS,
+            deterministic=instant,
         )
     except Exception as exc:
         _record_drill(drill_id, state="failed", error=f"{type(exc).__name__}: {exc}")
@@ -150,6 +241,8 @@ def _execute_drill(drill_id: str, prefix: str) -> None:
 
 
 def start_drill() -> Any:
+    body = request.get_json(silent=True) or {}
+    instant = bool(body.get("instant"))
     drill_id = uuid.uuid4().hex[:8]
     prefix = f"drill_{drill_id}"
     with _drill_lock:
@@ -159,9 +252,10 @@ def start_drill() -> Any:
             "state": "running",
             "started_at": datetime.now(UTC).isoformat(),
             "corridor": DRILL_CORRIDOR,
-            "mode": "replay",
+            "mode": "deterministic" if instant else "adaptive",
         }
-    threading.Thread(target=_execute_drill, args=(drill_id, prefix), daemon=True).start()
+    thread = threading.Thread(target=_execute_drill, args=(drill_id, prefix, instant), daemon=True)
+    thread.start()
     return jsonify({"drill_id": drill_id, "state": "running", "prefix": prefix}), 202
 
 

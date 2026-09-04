@@ -11,7 +11,7 @@ from actions.board import board_snapshot
 from agent.trace import list_runs, read_trace
 from api.agents import agents, chain_trace, full_chain_runs
 from api.charts import charts
-from api.control import drill_status, gate_decision, pending_gates, start_drill
+from api.control import drill_alert, drill_status, gate_decision, pending_gates, start_drill
 from api.fallback import fallback_page
 from api.operations import alert_history, hotzones, national_risk
 from api.predict import (
@@ -176,6 +176,7 @@ POST_ROUTES: tuple[tuple[str, Any], ...] = (
     ("/api/ask", ask_sandbox),
     ("/api/gate/<run_id>/decision", gate_decision),
     ("/api/drill", start_drill),
+    ("/api/drill/alert", drill_alert),
 )
 
 
