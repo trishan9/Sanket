@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { DEFAULT_LAYERS, HazardMap, type MapLayerState } from "@/components/map/HazardMap";
 import { Hero, StatCard, StatRow } from "@/components/shell/Hero";
 import { AgentPanel } from "@/components/sim/AgentPanel";
+import { PredictionLive } from "@/components/sim/PredictionLive";
 import { fetchCascade, fetchDamage, type CascadePayload, type DamagePayload } from "@/lib/risk";
 import { fetchHazard, type HazardPayload } from "@/lib/predict";
 import { fetchTrace } from "@/lib/api";
@@ -75,6 +76,10 @@ export default function SimulatePage() {
           </div>
         }
       />
+
+      <div className="mb-4">
+        <PredictionLive />
+      </div>
 
       <StatRow>
         <StatCard
