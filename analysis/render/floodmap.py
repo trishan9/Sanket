@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 import numpy as np
 import rasterio
@@ -150,10 +151,67 @@ def _depth_colour(normalised: np.ndarray) -> np.ndarray:
     return stacked
 
 
+RIVER_TYPES = ("river", "stream", "canal")
+RIVER_TINT = np.array([74, 112, 152], dtype=np.float32)
+RIVER_STRENGTH = {"river": 0.7, "canal": 0.5, "stream": 0.38}
+
+
+def _waterway_frame() -> Any:
+    import geopandas as gpd
+
+    path = paths.silver / "hot_flood_npl" / "Waterways (OSM), GeoJSON.parquet"
+    if not path.exists():
+        return None
+    frame = gpd.read_parquet(path)
+    if "waterway" not in frame.columns:
+        return None
+    return frame[frame["waterway"].isin(RIVER_TYPES)]
+
+
+def river_mask(raster: FloodRaster) -> dict[str, np.ndarray]:
+    from rasterio.features import rasterize
+
+    frame = _waterway_frame()
+    if frame is None or frame.empty:
+        return {}
+    frame = frame.to_crs(raster.crs)
+    masks: dict[str, np.ndarray] = {}
+    for kind in RIVER_TYPES:
+        subset = frame[frame["waterway"] == kind]
+        shapes = [(geom, 1) for geom in subset.geometry if geom is not None and not geom.is_empty]
+        if not shapes:
+            continue
+        drawn = rasterize(
+            shapes,
+            out_shape=raster.depth_m.shape,
+            transform=raster.transform,
+            fill=0,
+            all_touched=True,
+            dtype="uint8",
+        )
+        if drawn.any():
+            masks[kind] = drawn.astype(bool)
+    return masks
+
+
+def _draw_rivers(base: np.ndarray, raster: FloodRaster) -> np.ndarray:
+    masks = river_mask(raster)
+    if not masks:
+        return base
+    painted = base
+    for kind, mask in masks.items():
+        width = 2 if kind == "river" else 1
+        thick = ndimage.binary_dilation(mask, iterations=width)
+        alpha = RIVER_STRENGTH[kind]
+        painted = np.where(thick[..., None], painted * (1 - alpha) + RIVER_TINT * alpha, painted)
+    return painted
+
+
 def compose_rgb(raster: FloodRaster, widen_px: int = 0) -> np.ndarray:
     shade = raster.hillshade
     base = np.stack([shade * 150 + 40, shade * 158 + 46, shade * 152 + 52], axis=-1)
     base = np.where(raster.dem_valid[..., None], base, np.array([26, 28, 33], dtype=np.float32))
+    base = _draw_rivers(base, raster)
     depth = np.nan_to_num(raster.depth_m)
     if widen_px > 0:
         depth = ndimage.grey_dilation(depth, size=(widen_px, widen_px))
