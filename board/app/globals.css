@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+
+  --page: #f4f6f8;
+  --surface: #ffffff;
+  --surface-sunken: #fafbfc;
+  --line: #e2e6ea;
+  --line-strong: #cdd4db;
+
+  --ink: #0d1620;
+  --ink-soft: #46525f;
+  --ink-muted: #71808f;
+  --ink-faint: #97a3b0;
+
+  --accent: #0a63c2;
+  --accent-soft: #e8f1fc;
+
+  --green: #0f7a54;
+  --yellow: #a56a07;
+  --orange: #c2521c;
+  --red: #b31b28;
+  --grey: #5f6b78;
+}
+
+* {
+  border-color: var(--line);
+}
+
+body {
+  background: var(--page);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+}
+
+.font-mono,
+code,
+kbd,
+pre {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-feature-settings: "zero";
+}
+
+.nepali {
+  font-family: var(--font-devanagari), var(--font-sans), sans-serif;
+}
+
+@layer components {
+  .card {
+    @apply rounded-lg border bg-[--surface] shadow-[0_1px_2px_rgba(13,22,32,0.04)];
+  }
+
+  .card-pad {
+    @apply p-5;
+  }
+
+  .card-head {
+    @apply flex flex-wrap items-baseline justify-between gap-2 border-b px-5 py-3;
+  }
+
+  .card-title {
+    @apply text-[13px] font-semibold uppercase tracking-[0.08em] text-[--ink-soft];
+  }
+
+  .card-note {
+    @apply border-t bg-[--surface-sunken] px-5 py-3 text-[11.5px] leading-relaxed text-[--ink-muted];
+  }
+
+  .metric {
+    @apply font-mono text-[26px] font-semibold tracking-tight text-[--ink];
+  }
+
+  .label {
+    @apply text-[11px] uppercase tracking-[0.07em] text-[--ink-faint];
+  }
+
+  .chip {
+    @apply inline-flex items-center rounded border px-2 py-0.5 text-[11px] font-semibold uppercase tracking-[0.05em];
+  }
+
+  .chip-scenario {
+    @apply border-amber-300 bg-amber-50 text-amber-800;
+  }
+
+  .stat-box {
+    @apply rounded-md border bg-[--surface-sunken] px-3 py-2.5;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center rounded-md border px-3 py-1.5 text-[13px] font-medium
+      text-[--ink-soft] transition-colors hover:bg-[--surface-sunken];
+  }
+
+  .btn-primary {
+    @apply border-transparent bg-[--accent] text-white hover:bg-[#0a58a8];
+  }
+
+  .field {
+    @apply w-full rounded-md border bg-[--surface] px-3 py-2 text-[13px] text-[--ink]
+      outline-none focus:border-[--accent] focus:ring-2 focus:ring-[--accent-soft];
+  }
+
+  .divider-row {
+    @apply border-t;
+  }
+}
+
+.claim-observation {
+  border-left: 3px solid var(--accent);
+}
+
+.claim-scenario {
+  border-left: 3px dashed var(--yellow);
+  font-style: italic;
+}
+
+.claim-model_output {
+  border-left: 3px solid #7c3aed;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d3dae1;
+  border: 3px solid var(--page);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b9c3cd;
+}
