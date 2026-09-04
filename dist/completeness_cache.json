@@ -1,0 +1,19 @@
+{
+  "tile": "T45RUL",
+  "optical": {
+    "product": "OPERA DIST-ALERT-HLS",
+    "by_month": {
+      "2026-07": 14,
+      "2026-08": 12,
+      "2026-09": 1
+    }
+  },
+  "radar": {
+    "product": "OPERA DSWx-S1",
+    "by_month": {
+      "2026-05": 4,
+      "2026-06": 15
+    }
+  },
+  "note": "counts are usable granules held locally, not total acquisitions; optical is cloud-limited through the monsoon, which is the argument for radar"
+}

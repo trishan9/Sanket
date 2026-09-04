@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "scenario": "1.0 Mm3 / 30 min",
+      "reference": "CEMS EMSR927",
+      "precision": 0.40764331210191085,
+      "recall": 0.1452729542617183,
+      "iou": 0.11995126979664511,
+      "f1": 0.2142080160656012,
+      "true_positive": 1280,
+      "false_positive": 1860,
+      "false_negative": 7531
+    },
+    {
+      "scenario": "1.0 Mm3 / 30 min",
+      "reference": "HDX flood extent",
+      "precision": 0.9738853503184713,
+      "recall": 0.19436852475688043,
+      "iou": 0.1933607334808726,
+      "f1": 0.32406082763736554,
+      "true_positive": 3058,
+      "false_positive": 82,
+      "false_negative": 12675
+    },
+    {
+      "scenario": "5.0 Mm3 / 360 min (largest in grid)",
+      "reference": "CEMS EMSR927",
+      "precision": 0.4100074682598954,
+      "recall": 0.18692543411644535,
+      "iou": 0.1473034612288704,
+      "f1": 0.2567820392890552,
+      "true_positive": 1647,
+      "false_positive": 2370,
+      "false_negative": 7164
+    },
+    {
+      "scenario": "5.0 Mm3 / 360 min (largest in grid)",
+      "reference": "HDX flood extent",
+      "precision": 0.964152352501867,
+      "recall": 0.2461704697133414,
+      "iou": 0.24393777161932356,
+      "f1": 0.39220253164556956,
+      "true_positive": 3873,
+      "false_positive": 144,
+      "false_negative": 11860
+    }
+  ],
+  "reading": "High precision against the HDX extent with low recall means the modelled corridor falls inside the observed flood but covers only part of it: a 1D water-only router on pre-event terrain cannot reproduce a debris-laden event that reworked the valley."
+}
