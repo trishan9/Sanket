@@ -137,6 +137,35 @@ def _lead_time_for(corridor_key: str, settlement: str) -> float | None:
     return None
 
 
+def flood_card() -> Any:
+    from actions.alertcard import render_alert_card
+    from actions.levels import coerce_level
+
+    settlement = str(request.args.get("settlement", "Timure")).strip()
+    raw_level = str(request.args.get("level", "RED")).strip().upper()
+    corridor = load_all_corridors()[DRILL_LIVE_CORRIDOR]
+    if settlement not in corridor.settlement_names:
+        return jsonify({"error": f"unknown settlement {settlement}"}), 400
+    try:
+        level = coerce_level(raw_level)
+    except ValueError as exc:
+        return jsonify({"error": str(exc)}), 400
+    lead = _lead_time_for(DRILL_LIVE_CORRIDOR, settlement)
+    run_id = f"card_{uuid.uuid4().hex[:8]}"
+    card = render_alert_card(
+        corridor, settlement, level, run_id, lead_time_minutes=lead, replay=True
+    )
+    return jsonify(
+        {
+            "settlement": settlement,
+            "level": level,
+            "lead_time_minutes": lead,
+            "image_url": f"/alertcards/{card.path.name}",
+            "card_file": card.path.name,
+        }
+    )
+
+
 def drill_alert() -> Any:
     from actions.alertcard import render_alert_card
     from actions.channels.twilio_whatsapp import TwilioWhatsApp
