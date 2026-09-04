@@ -144,7 +144,12 @@ class ReplaySummary:
 
 
 def _investigate_feature(
-    corridor: Corridor, feature_id: str, run_prefix: str, as_of: date, store: State
+    corridor: Corridor,
+    feature_id: str,
+    run_prefix: str,
+    as_of: date,
+    store: State,
+    deterministic: bool = False,
 ) -> tuple[str, tuple[str, ...]]:
     run_id = f"{run_prefix}_{feature_id}_{as_of.isoformat()}"
     trace = Trace(run_id, corridor.basin_id, replay=True)
@@ -158,6 +163,7 @@ def _investigate_feature(
         trace,
         store=store,
         as_of=as_of,
+        deterministic=deterministic,
     )
     tools = tuple(line.tool for line in trace.lines if line.kind == "TOOL" and line.tool)
     trace.done(f"replay investigation concluded: {ledger.outcome}")
@@ -177,7 +183,11 @@ def _radar_tick(corridor: Corridor, run_prefix: str, as_of: date, store: State) 
 
 
 def run_replay(
-    corridor: Corridor, run_prefix: str, store: State | None = None, tick_real_seconds: float = 1.0
+    corridor: Corridor,
+    run_prefix: str,
+    store: State | None = None,
+    tick_real_seconds: float = 1.0,
+    deterministic: bool = False,
 ) -> ReplaySummary:
     target = store or default_state
     clock = build_clock(corridor)
@@ -190,7 +200,9 @@ def run_replay(
         outcome = "quiet"
         run_id: str | None = None
         for feature_id in _features_newly_due(corridor, as_of, previous_as_of):
-            run_id, tools = _investigate_feature(corridor, feature_id, run_prefix, as_of, target)
+            run_id, tools = _investigate_feature(
+                corridor, feature_id, run_prefix, as_of, target, deterministic
+            )
             tool_sequences.append(tools)
             outcome = "investigated"
         if outcome == "quiet":
