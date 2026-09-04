@@ -25,6 +25,24 @@ class VoiceCallResult:
     dialler_simulated: bool = True
 
 
+STREAMING_PLACEHOLDER = 0xFFFFFFFF
+
+
+def _with_real_sizes(raw: bytes) -> bytes:
+    if len(raw) < 44 or raw[:4] != b"RIFF":
+        return raw
+    data_at = raw.find(b"data")
+    if data_at == -1:
+        return raw
+    patched = bytearray(raw)
+    if int.from_bytes(patched[4:8], "little") == STREAMING_PLACEHOLDER:
+        patched[4:8] = (len(raw) - 8).to_bytes(4, "little")
+    payload = data_at + 8
+    if int.from_bytes(patched[payload - 4 : payload], "little") == STREAMING_PLACEHOLDER:
+        patched[payload - 4 : payload] = (len(raw) - payload).to_bytes(4, "little")
+    return bytes(patched)
+
+
 def _audio_path(settlement: str, run_id: str) -> Path:
     paths.audio.mkdir(parents=True, exist_ok=True)
     digest = hashlib.sha256(f"{settlement}|{run_id}".encode()).hexdigest()[:12]
@@ -51,7 +69,7 @@ def generate_call(
     if not audio_base64:
         raise DeliveryFailedError(f"{VOICE_LANE} returned no audio for {settlement}")
     target = _audio_path(settlement, run_id)
-    target.write_bytes(base64.b64decode(audio_base64))
+    target.write_bytes(_with_real_sizes(base64.b64decode(audio_base64)))
     return VoiceCallResult(settlement=settlement, script=script, audio_path=str(target))
 
 
