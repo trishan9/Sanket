@@ -153,7 +153,7 @@ def _draw_legend(canvas: Image.Image, max_depth_m: float) -> None:
     top = MAP_HEIGHT - height
     draw.rectangle([0, top, CARD_WIDTH, MAP_HEIGHT], fill=(8, 12, 20, 210))
     draw.text((48, top + 20), "Modelled flood path", font=_font(LATIN_BOLD, 30), fill=INK)
-    draw.text((48, top + 60), "peak rise, line width symbolic",
+    draw.text((48, top + 60), "peak rise on the river network, line width symbolic",
               font=_font(LATIN_REGULAR, 22), fill=MUTED)
     bar_left = CARD_WIDTH - 400
     for index in range(300):
