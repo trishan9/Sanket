@@ -67,7 +67,11 @@ Dependency direction one-way: `board → api → agent → analysis → core`. E
 
 ---
 
+
+
 ## 2. The autonomy engine
+
+
 
 ### 2.1 Daemon
 
@@ -82,14 +86,18 @@ watch/
   replay.py      replay clock, timed granule release, as_of advance
 ```
 
+
+
 ### 2.2 Four tiers
 
-| Tier | Fires | Cost | Does |
-|---|---|---|---|
-| **0** | per basin tier (15 min / 6 h / weekly) | **zero LLM** | CMR `updated_since` poll, DHM stage, anomaly re-check due |
-| **1** | new granule | **zero LLM** | Water and disturbance delta vs a rolling 14-observation baseline, as a z-score against that baseline's own variance |
-| **2** | change outside band | one small call | `investigate \| artefact \| seasonal \| insufficient_data` |
-| **3** | `investigate` | the agent | Investigator loop |
+
+| Tier  | Fires                                  | Cost           | Does                                                                                                                |
+| ----- | -------------------------------------- | -------------- | ------------------------------------------------------------------------------------------------------------------- |
+| **0** | per basin tier (15 min / 6 h / weekly) | **zero LLM**   | CMR `updated_since` poll, DHM stage, anomaly re-check due                                                           |
+| **1** | new granule                            | **zero LLM**   | Water and disturbance delta vs a rolling 14-observation baseline, as a z-score against that baseline's own variance |
+| **2** | change outside band                    | one small call | `investigate | artefact | seasonal | insufficient_data`                                                             |
+| **3** | `investigate`                          | the agent      | Investigator loop                                                                                                   |
+
 
 Tiers 0 and 1 make **zero LLM calls** — asserted in a test.
 
@@ -123,6 +131,8 @@ gates         (gate_id, run_id, action, payload, requested_at,
 subscribers   (contact, channel, settlement, role, opted_in_at, stopped_at)
 ```
 
+
+
 ### 2.5 Behavioural guarantees
 
 **Hysteresis** — escalation threshold above the maintenance threshold; de-escalation below it. Status does not flap.
@@ -134,18 +144,22 @@ subscribers   (contact, channel, settlement, role, opted_in_at, stopped_at)
 
 ---
 
+
+
 ## 3. The six agents
 
 Full detail in `04-AGENT-REFERENCE.md`. Summary:
 
-| Agent | Provider · model | Fires | Job | Communicates via |
-|---|---|---|---|---|
-| **Scout** | Groq `groq/compound` | weekly | Sweep 47 PDGLs, assign watch tiers | `basin_tiers` |
-| **Watcher** | Groq `gpt-oss-20b` (T2 only) | tick + granule | Decide whether to investigate | work queue |
-| **Investigator** | Azure `gpt-5.5` | on `investigate` | Goal + 12 tools, chooses its own path | `EvidenceLedger` |
-| **Verifier** | Azure `grok-4.6` | after Investigator | Adjudicate, assign confidence, veto | `VerificationTable` + `StatusDecision` |
-| **Explainer** | Groq `gpt-oss-120b` | after Verifier | Attribution, counterfactuals, flip point, 3 registers | `PublicNote` · `EvidencePack` · `VoiceScript` |
-| **Actor** | deterministic + Azure `gpt-audio` | after Explainer | Board, gate, voice, SMS, WhatsApp | DB writes, Twilio |
+
+| Agent            | Provider · model                  | Fires              | Job                                                   | Communicates via                              |
+| ---------------- | --------------------------------- | ------------------ | ----------------------------------------------------- | --------------------------------------------- |
+| **Scout**        | Groq `groq/compound`              | weekly             | Sweep 47 PDGLs, assign watch tiers                    | `basin_tiers`                                 |
+| **Watcher**      | Groq `gpt-oss-20b` (T2 only)      | tick + granule     | Decide whether to investigate                         | work queue                                    |
+| **Investigator** | Azure `gpt-5.5`                   | on `investigate`   | Goal + 12 tools, chooses its own path                 | `EvidenceLedger`                              |
+| **Verifier**     | Azure `grok-4.6`                  | after Investigator | Adjudicate, assign confidence, veto                   | `VerificationTable` + `StatusDecision`        |
+| **Explainer**    | Groq `gpt-oss-120b`               | after Verifier     | Attribution, counterfactuals, flip point, 3 registers | `PublicNote` · `EvidencePack` · `VoiceScript` |
+| **Actor**        | deterministic + Azure `gpt-audio` | after Explainer    | Board, gate, voice, SMS, WhatsApp                     | DB writes, Twilio                             |
+
 
 **Agents do not talk to each other. They hand typed artifacts through shared state.** No agent calls backwards.
 
@@ -186,20 +200,22 @@ def investigate(goal: str, context: dict) -> Ledger:
 
 ### 3.2 The twelve tools
 
-| Tool | Datasets behind it |
-|---|---|
-| `search_granules(product, bbox, since)` | NASA CMR |
-| `detect_water_change(granule, baseline)` | OPERA DSWx-S1 + `baselines` |
-| `detect_disturbance(granule)` | OPERA DIST-ALERT-HLS v1 |
-| `lake_area_series(catchment, from, to)` | Sentinel-2 L2A, OmniCloudMask, OmniWaterMask, MNDWI+Otsu |
-| `precip_percentile(basin, date)` | GPM IMERG / CHIRPS vs 20-year climatology |
-| `stage_volume(point)` | NASA HMA 8 m DEM |
-| `breach_hydrograph(volume, duration, mode)` | derived |
-| `route_flood(hydrograph)` | HMA 8 m DEM + precomputed scenario grid |
-| `exposure_at(inundation)` | OSM/HOT, WorldPop, HDX `hot_flood_npl` |
-| `precedent(basin)` | HMAGLOFDB, ICIMOD PDGL, BIPAD |
-| `science_lookup(query)` | ChromaDB `science` |
-| `write_status(settlement, level, evidence)` | **autonomous consequence** |
+
+| Tool                                        | Datasets behind it                                       |
+| ------------------------------------------- | -------------------------------------------------------- |
+| `search_granules(product, bbox, since)`     | NASA CMR                                                 |
+| `detect_water_change(granule, baseline)`    | OPERA DSWx-S1 + `baselines`                              |
+| `detect_disturbance(granule)`               | OPERA DIST-ALERT-HLS v1                                  |
+| `lake_area_series(catchment, from, to)`     | Sentinel-2 L2A, OmniCloudMask, OmniWaterMask, MNDWI+Otsu |
+| `precip_percentile(basin, date)`            | GPM IMERG / CHIRPS vs 20-year climatology                |
+| `stage_volume(point)`                       | NASA HMA 8 m DEM                                         |
+| `breach_hydrograph(volume, duration, mode)` | derived                                                  |
+| `route_flood(hydrograph)`                   | HMA 8 m DEM + precomputed scenario grid                  |
+| `exposure_at(inundation)`                   | OSM/HOT, WorldPop, HDX `hot_flood_npl`                   |
+| `precedent(basin)`                          | HMAGLOFDB, ICIMOD PDGL, BIPAD                            |
+| `science_lookup(query)`                     | ChromaDB `science`                                       |
+| `write_status(settlement, level, evidence)` | **autonomous consequence**                               |
+
 
 Gated — may be requested, not executed: `voice_call`, `send_sms`, `send_whatsapp`.
 
@@ -222,7 +238,7 @@ Gated — may be requested, not executed: `voice_call`, `send_sms`, `send_whatsa
 }
 ```
 
-`claim_type` ∈ `{observation, correlation, model_output, scenario, hypothesis, recommendation}`. **The renderer refuses to display a `scenario` in the same visual style as an `observation`.**
+`claim_type` ∈ `{observation, correlation, model_output, scenario, hypothesis, recommendation}`. **The renderer refuses to display a** `scenario` **in the same visual style as an** `observation`**.**
 
 ### 3.4 Claim and veto
 
@@ -248,28 +264,38 @@ Guardrails: read-only · no network · no filesystem writes · 10-second timeout
 
 ---
 
+
+
 ## 4. The dual-provider gateway
+
+
 
 ### 4.1 Allocation principle
 
-| | Hackathon Azure endpoint | Groq |
-|---|---|---|
-| Whose quota | **shared by all fifteen teams** | **ours alone** |
+
+|                   | Hackathon Azure endpoint                                            | Groq                                              |
+| ----------------- | ------------------------------------------------------------------- | ------------------------------------------------- |
+| Whose quota       | **shared by all fifteen teams**                                     | **ours alone**                                    |
 | Unique capability | `gpt-audio`, `gpt-transcribe`, Azure TTS/STT, `gpt-5.5`, `grok-4.6` | high token-per-minute headroom on `groq/compound` |
+
 
 > **The shared key goes to work that needs frontier judgement or audio. Our own quota absorbs the volume.**
 
 ~90% of calls land on Groq. This is fair use as an engineering decision — an autonomous agent looping on a shared key is exactly how fifteen teams lose access at four in the morning.
 
-| Lane | Primary | Fallback | Used by |
-|---|---|---|---|
-| `sanket-scout` | Groq `groq/compound` | Azure `DeepSeek-V4-Flash` | Scout |
-| `sanket-classify` | Groq `openai/gpt-oss-20b` | Azure `DeepSeek-V4-Flash` | Watcher Tier 2 |
-| `sanket-explain` | Groq `openai/gpt-oss-120b` | Azure `DeepSeek-V4-Pro` | Explainer, Sandbox |
-| `sanket-plan` | Azure `gpt-5.5` | Groq `gpt-oss-120b` → local | Investigator |
-| `sanket-critic` | Azure `grok-4.6` | Groq `qwen/qwen3-32b` | Verifier |
-| `sanket-voice` | Azure `gpt-audio` | Azure TTS | Actor |
-| `sanket-plan-local` | Ollama `gpt-oss-20b` | — | offline path |
+
+| Lane                | Primary                    | Fallback                    | Used by            |
+| ------------------- | -------------------------- | --------------------------- | ------------------ |
+| `sanket-scout`      | Groq `groq/compound`       | Azure `DeepSeek-V4-Flash`   | Scout              |
+| `sanket-classify`   | Groq `openai/gpt-oss-20b`  | Azure `DeepSeek-V4-Flash`   | Watcher Tier 2     |
+| `sanket-explain`    | Groq `openai/gpt-oss-120b` | Azure `DeepSeek-V4-Pro`     | Explainer, Sandbox |
+| `sanket-plan`       | Azure `gpt-5.5`            | Groq `gpt-oss-120b` → local | Investigator       |
+| `sanket-critic`     | Azure `grok-4.6`           | Groq `qwen/qwen3-32b`       | Verifier           |
+| `sanket-voice`      | Azure `gpt-audio`          | Azure TTS                   | Actor              |
+| `sanket-plan-local` | Ollama `gpt-oss-20b`       | —                           | offline path       |
+
+
+
 
 ### 4.2 LiteLLM Router
 
@@ -307,11 +333,11 @@ router = Router(
 
 **Three details that matter:**
 
-1. **`simple-shuffle`, not `usage-based-routing-v2`.** LiteLLM's own docs flag usage-based routing as a poor production choice — Redis operations on every request add real latency. With `tpm`/`rpm` set per deployment, `simple-shuffle` does a weighted pick and maximised throughput in their load tests. Single instance, no Redis: unambiguously right.
-2. **`order` gives priority inside a lane.** On a 429 the failing deployment goes on cooldown immediately and the router shifts provider without waiting for the fallback chain.
+1. `simple-shuffle`**, not** `usage-based-routing-v2`**.** LiteLLM's own docs flag usage-based routing as a poor production choice — Redis operations on every request add real latency. With `tpm`/`rpm` set per deployment, `simple-shuffle` does a weighted pick and maximised throughput in their load tests. Single instance, no Redis: unambiguously right.
+2. `order` **gives priority inside a lane.** On a 429 the failing deployment goes on cooldown immediately and the router shifts provider without waiting for the fallback chain.
 3. **Fallbacks cross providers both directions.** Azure rate-limited → planning drops to Groq. Groq quota exhausted → Scout and Classify drop to Azure. Both gone → local Ollama, trace records `degraded: local`.
 
-**`agent/router.py` is the only place in the codebase where a provider is named.** Enforced by a lint rule that fails the build.
+`agent/router.py` **is the only place in the codebase where a provider is named.** Enforced by a lint rule that fails the build.
 
 ### 4.3 Fair use and cost
 
@@ -321,22 +347,28 @@ router = Router(
 
 ---
 
+
+
 ## 5. Models
+
+
 
 ### 5.1 Language
 
-Covered in §4. Embeddings: **`BAAI/bge-m3` locally** via `sentence-transformers` — multilingual, handles Nepali source text, consumes no API quota.
+Covered in §4. Embeddings: `BAAI/bge-m3` **locally** via `sentence-transformers` — multilingual, handles Nepali source text, consumes no API quota.
 
 ### 5.2 Earth observation
 
-| Component | Role | Decision |
-|---|---|---|
-| **OPERA DSWx-S1** (NASA/JPL) | All-weather surface water, 30 m, every few days | **Use.** A pre-computed product, and the primary trigger source. |
-| **OPERA DIST-ALERT-HLS v1** | Land-surface disturbance, 30 m, every 2–4 days, NRT | **Use v1.** V0 provisional decommissioned April 2025. |
-| **OmniCloudMask / OmniWaterMask** | Per-scene cloud and water masking | **Use.** `pip`-installable, from the geo-pera pipeline. |
-| **MNDWI + Otsu** | Our own optical water detector | **Build.** Its value is *independence* from OPERA. `independence_group: sanket_optical`. |
-| Prithvi-EO-2.0-Sen1Floods11 | Third opinion | **Optional.** ~446 lowland training chips, effectively no Himalayan signal. Caveat if used. |
-| YOLO · SegFormer · Clay · SatMAE · SAM 2 · custom training | — | **No.** Wrong task shape, no Himalayan validation set, four events is not a validation set. |
+
+| Component                                                  | Role                                                | Decision                                                                                    |
+| ---------------------------------------------------------- | --------------------------------------------------- | ------------------------------------------------------------------------------------------- |
+| **OPERA DSWx-S1** (NASA/JPL)                               | All-weather surface water, 30 m, every few days     | **Use.** A pre-computed product, and the primary trigger source.                            |
+| **OPERA DIST-ALERT-HLS v1**                                | Land-surface disturbance, 30 m, every 2–4 days, NRT | **Use v1.** V0 provisional decommissioned April 2025.                                       |
+| **OmniCloudMask / OmniWaterMask**                          | Per-scene cloud and water masking                   | **Use.** `pip`-installable, from the geo-pera pipeline.                                     |
+| **MNDWI + Otsu**                                           | Our own optical water detector                      | **Build.** Its value is *independence* from OPERA. `independence_group: sanket_optical`.    |
+| Prithvi-EO-2.0-Sen1Floods11                                | Third opinion                                       | **Optional.** ~446 lowland training chips, effectively no Himalayan signal. Caveat if used. |
+| YOLO · SegFormer · Clay · SatMAE · SAM 2 · custom training | —                                                   | **No.** Wrong task shape, no Himalayan validation set, four events is not a validation set. |
+
 
 **Baselines are computed by the system** — rolling 14 observations per product per tile, with variance. "Abnormal" is measured, not hardcoded.
 
@@ -356,7 +388,7 @@ NASA HMA 8 m DEM (void-filled, datum-corrected, mosaicked)
              └─ arrival-time raster · peak-depth raster · inundation polygon
 ```
 
-`swe2d_torch.py` and `route1d.py` **vendored from `geo-pera/bhotekoshi-2026-reconstruction` (MIT)**, licence headers retained.
+`swe2d_torch.py` and `route1d.py` **vendored from** `geo-pera/bhotekoshi-2026-reconstruction` **(MIT)**, licence headers retained.
 
 **Scenario grid precomputed:** volume 0.5–5.0 Mm³ × breach 5 min–6 h, as COGs. **Declare the precompute** — it is caching, and it must be stated.
 
@@ -370,7 +402,11 @@ Rainfall anomaly = seasonal decomposition + percentile rank against a 20-year cl
 
 ---
 
+
+
 ## 6. Data layer
+
+
 
 ### 6.1 Provenance contract
 
@@ -420,16 +456,20 @@ Every data access — SQL, STAC, CMR and RAG — takes a required `as_of: date`.
 
 ### 6.4 Datasets — must-have (8)
 
-| # | Dataset | Access | Role |
-|---|---|---|---|
-| 1 | **NASA HMA 8 m DEM**, tiles 642/643/675/676 | NSIDC, Earthdata login | Stage–volume, routing, 3D terrain. **No fallback — register first.** |
-| 2 | **OPERA DSWx-S1** | `earthaccess` + CMR | All-weather water/blockage detection. **The trigger.** |
-| 3 | **OPERA DIST-ALERT-HLS v1** | `earthaccess` + CMR | Disturbance, NRT. Use **v1**. |
-| 4 | **Sentinel-2 L2A** | Planetary Computer STAC, anonymous | Lake area series |
-| 5 | **Sentinel-1 GRD** | Planetary Computer, anonymous | Radar cross-check. ⚠️ `sentinel-1-rtc` needs a key — use GRD or OPERA RTC-S1 |
-| 6 | **HDX `hot_flood_npl`** + `hot_flood_npl_buildings_damage` | HDX API, daily | Observed extent, damage |
-| 7 | **OSM / HOT exposure** — buildings, roads, bridges, helipads, populated places, health, education, hydropower | HDX + HOT Raw Data API, **ODbL** | Everything counted; routing network |
-| 8 | **IMERG or CHIRPS** | NASA GES DISC / UCSB CHC | The rule-out evidence |
+
+| #   | Dataset                                                                                                       | Access                             | Role                                                                         |
+| --- | ------------------------------------------------------------------------------------------------------------- | ---------------------------------- | ---------------------------------------------------------------------------- |
+| 1   | **NASA HMA 8 m DEM**, tiles 642/643/675/676                                                                   | NSIDC, Earthdata login             | Stage–volume, routing, 3D terrain. **No fallback — register first.**         |
+| 2   | **OPERA DSWx-S1**                                                                                             | `earthaccess` + CMR                | All-weather water/blockage detection. **The trigger.**                       |
+| 3   | **OPERA DIST-ALERT-HLS v1**                                                                                   | `earthaccess` + CMR                | Disturbance, NRT. Use **v1**.                                                |
+| 4   | **Sentinel-2 L2A**                                                                                            | Planetary Computer STAC, anonymous | Lake area series                                                             |
+| 5   | **Sentinel-1 GRD**                                                                                            | Planetary Computer, anonymous      | Radar cross-check. ⚠️ `sentinel-1-rtc` needs a key — use GRD or OPERA RTC-S1 |
+| 6   | **HDX** `hot_flood_npl` + `hot_flood_npl_buildings_damage`                                                    | HDX API, daily                     | Observed extent, damage                                                      |
+| 7   | **OSM / HOT exposure** — buildings, roads, bridges, helipads, populated places, health, education, hydropower | HDX + HOT Raw Data API, **ODbL**   | Everything counted; routing network                                          |
+| 8   | **IMERG or CHIRPS**                                                                                           | NASA GES DISC / UCSB CHC           | The rule-out evidence                                                        |
+
+
+
 
 ### 6.5 High value (9)
 
@@ -457,22 +497,30 @@ Most restrictive term wins per derived layer. Outputs mix ODbL (share-alike), CC
 
 ---
 
+
+
 ## 7. RAG
 
 ChromaDB, persistent, **two collections**.
 
-| Collection | Contents | Job |
-|---|---|---|
-| `science` | HMAGLOFDB, ICIMOD PDGL report, ICIMOD Thame assessment, NHESS 2026 Thame paper, Taylor 2023, Shrestha 2023, Rounce 2016, Veh 2019, Mergili r.avaflow | Ground every method claim in a citation |
-| `events` | Kathmandu Post, Al Jazeera, Reuters, ICIMOD releases, DHM bulletins, USGS ANSS, EMSR927, OSM activation wiki, BIPAD extracts, geopera docs **including the retracted version** | Precedent, under a hard date filter |
 
-Metadata: `source_org`, `url`, `published_at`, **`published_ts` (int epoch)**, `claim_type` ∈ `{reported, official, analysis, retracted}`, `independence_group`, `geo`, `lang`.
+| Collection | Contents                                                                                                                                                                       | Job                                     |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | --------------------------------------- |
+| `science`  | HMAGLOFDB, ICIMOD PDGL report, ICIMOD Thame assessment, NHESS 2026 Thame paper, Taylor 2023, Shrestha 2023, Rounce 2016, Veh 2019, Mergili r.avaflow                           | Ground every method claim in a citation |
+| `events`   | Kathmandu Post, Al Jazeera, Reuters, ICIMOD releases, DHM bulletins, USGS ANSS, EMSR927, OSM activation wiki, BIPAD extracts, geopera docs **including the retracted version** | Precedent, under a hard date filter     |
+
+
+Metadata: `source_org`, `url`, `published_at`, `published_ts` **(int epoch)**, `claim_type` ∈ `{reported, official, analysis, retracted}`, `independence_group`, `geo`, `lang`.
 
 Chunking: `RecursiveCharacterTextSplitter(800, overlap=120)` for news; papers split on section headings first, then recurse. Every retrieved chunk passes an injection filter before entering a prompt; drops are logged.
 
 ---
 
+
+
 ## 8. Channels
+
+
 
 ### 8.1 The board
 
@@ -498,11 +546,13 @@ Practical: free trial accounts include 100 WhatsApp messages · sandbox sessions
 
 **Three tiers, slot-filled from Explainer output, never free composition:**
 
-| Tier | Recipient | Content |
-|---|---|---|
-| 1 | Resident subscriber | Nepali, settlement, arrival time, one action, **plus the inundation map image** |
-| 2 | Institutional | Arrival times per settlement, basis, confidence, evidence age, "this is a scenario", link to full evidence, **and what the system refused to conclude** |
-| 3 | **Approver** | The gate request: attribution, counterfactual, flip point, before/after image, `Reply APPROVE <run_id>` |
+
+| Tier | Recipient           | Content                                                                                                                                                 |
+| ---- | ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| 1    | Resident subscriber | Nepali, settlement, arrival time, one action, **plus the inundation map image**                                                                         |
+| 2    | Institutional       | Arrival times per settlement, basis, confidence, evidence age, "this is a scenario", link to full evidence, **and what the system refused to conclude** |
+| 3    | **Approver**        | The gate request: attribution, counterfactual, flip point, before/after image, `Reply APPROVE <run_id>`                                                 |
+
 
 **The gate over WhatsApp** is the design decision worth defending: a duty officer at 03:00 has a phone, not a laptop. Twilio inbound webhook → Flask route → match `run_id` and sender against `gates` → record approver identity, timestamp, decision → release the Actor's queued sends. Unmatched or unauthorised replies are logged and ignored.
 
@@ -513,6 +563,8 @@ Practical: free trial accounts include 100 WhatsApp messages · sandbox sessions
 `gpt-audio` / Azure TTS generating real Nepali audio, ~22 seconds, arrival time interpolated into a **template with slots**. Dialler simulated and declared; audio real. SMS at 140 characters, Nepali, simulated gateway, declared.
 
 ---
+
+
 
 ## 9. Replay mode
 
@@ -538,6 +590,8 @@ replay:
 
 ---
 
+
+
 ## 10. Full stack
 
 **Agents & models** — `litellm` (Router; the only place a provider is named) · `smolagents` (sandbox only) · Ollama (offline lane) · `chromadb` · `sentence-transformers`
@@ -560,6 +614,8 @@ replay:
 
 ---
 
+
+
 ## 11. Engineering standards
 
 **No comments. None.** No inline, no block, no `# TODO`, no commented-out code, no section banners. If code needs explanation, the names are wrong or the function is too big.
@@ -567,6 +623,8 @@ replay:
 Type hints on every Python signature; `mypy --strict` on `core/` and `analysis/`. TypeScript strict, no `any`. Functions under 40 lines, files under 400. Pure functions where possible, I/O at the edges. One responsibility per module. Pydantic at every boundary. Typed exceptions from `core/errors.py`, never bare `except`. `structlog`, never `print`. Config in `config.py` and `.env`. README per package — **that is where explanation lives.**
 
 ---
+
+
 
 ## 12. Limitations
 
